@@ -37,9 +37,12 @@
     <script src="../../_static/jquery.js"></script>
     <script src="../../_static/underscore.js"></script>
     <script src="../../_static/doctools.js"></script>
-    <script src="../../_static/togglebutton.js"></script>
     <script src="../../_static/clipboard.min.js"></script>
     <script src="../../_static/copybutton.js"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
@@ -49,7 +52,7 @@ const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
+    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.1/dist/embed-amd.js"></script>
     <link rel="shortcut icon" href="../../_static/IOOS_logo.png"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
@@ -100,6 +103,18 @@ const thebe_selector_output = ".output, .cell_output"
 </form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item active">
         <p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Getting Started
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../ioos_installation_conda.html">
+   Installing the IOOS Conda Environment
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Code Gallery
  </span>
@@ -347,11 +362,6 @@ const thebe_selector_output = ".output, .cell_output"
 </p>
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="../ioos_installation_conda.html">
-   Installing the IOOS Conda Environment
-  </a>
- </li>
- <li class="toctree-l1">
   <a class="reference external" href="https://help.aodn.org.au/aodn-data-tools/user-code-library/">
    Opening netCDF files - hints from AODN
   </a>
@@ -465,6 +475,19 @@ const thebe_selector_output = ".output, .cell_output"
         <!-- Table of contents -->
         <div class="d-none d-md-block col-md-2 bd-toc show noprint">
             
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#chapter-table-of-contents">
+   Chapter table of contents
+  </a>
+ </li>
+</ul>
+
+            </nav>
         </div>
     </div>
 </div>
@@ -477,6 +500,19 @@ const thebe_selector_output = ".output, .cell_output"
                 <div id="print-main-content">
                     <div id="jb-print-toc">
                         
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#chapter-table-of-contents">
+   Chapter table of contents
+  </a>
+ </li>
+</ul>
+
+                        </nav>
                     </div>
                 </div>
             </div>
@@ -486,7 +522,22 @@ const thebe_selector_output = ".output, .cell_output"
   <div class="tex2jax_ignore mathjax_ignore section" id="data-analysis-and-visualization">
 <h1>Data Analysis And Visualization<a class="headerlink" href="#data-analysis-and-visualization" title="Permalink to this headline">¶</a></h1>
 <p>This chapter will consist of notebooks pertaining to data analysis.</p>
+<hr class="docutils" />
+<div class="section" id="chapter-table-of-contents">
+<h2>Chapter table of contents<a class="headerlink" href="#chapter-table-of-contents" title="Permalink to this headline">¶</a></h2>
 <div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="data_analysis_and_visualization_notebooks/2016-11-16-CF-UGRID-SGRID-conventions.html">Parsing Conventions and standards with Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="data_analysis_and_visualization_notebooks/2017-01-23-R-notebook.html">Quick demonstration of R-notebooks using the r-oce library</a></li>
+<li class="toctree-l1"><a class="reference internal" href="data_analysis_and_visualization_notebooks/2017-03-30-octave_notebook_example.html">A Matlab notebook primer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="data_analysis_and_visualization_notebooks/2018-03-15-ssh-skillscore.html">Investigating ocean models skill for sea surface height with IOOS catalog and Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="data_analysis_and_visualization_notebooks/2018-03-30-wave_height_assessment.html">Coastal Ocean Wave Height Assessment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="data_analysis_and_visualization_notebooks/2018-12-04-grids.html">IOOS models</a></li>
+<li class="toctree-l1"><a class="reference internal" href="data_analysis_and_visualization_notebooks/2020-02-14-QARTOD_ioos_qc_Water-Level-Example.html">IOOS QARTOD software (ioos_qc)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="data_analysis_and_visualization_notebooks/2021-10-25-ERDDAP-interpolate.html">Interpolating data remotely with ERDDAP</a></li>
+</ul>
+</div>
+<hr class="docutils" />
 </div>
 </div>
 
