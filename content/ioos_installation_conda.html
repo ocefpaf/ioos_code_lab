@@ -797,7 +797,7 @@ except for the license agreement where you must actively change it to <code clas
 <p>The first thing we will do is to install the mamba solver and add it to our <code class="docutils literal notranslate"><span class="pre">.condarc</span></code>.
 This make the faster mamba solver default in our installations.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">install</span> <span class="o">--</span><span class="n">name</span> <span class="n">base</span> <span class="n">conda</span><span class="o">-</span><span class="n">libmamba</span><span class="o">-</span><span class="n">solver</span> <span class="o">--</span><span class="n">yes</span>
-<span class="n">conda</span> <span class="n">config</span> <span class="o">--</span><span class="nb">set</span> <span class="n">experimental_solver</span> <span class="n">libmamba</span>
+<span class="n">conda</span> <span class="n">config</span> <span class="o">--</span><span class="nb">set</span> <span class="n">solver</span> <span class="n">libmamba</span>
 </pre></div>
 </div>
 <p>If that worked you should see:</p>
