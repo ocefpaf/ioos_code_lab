@@ -752,7 +752,7 @@ data_info
 </div>
 </div>
 </div>
-<p>By inspecting the information above we can find the variables available in the dateset and use  the <code class="docutils literal notranslate"><span class="pre">tabledap</span></code> function to download them.</p>
+<p>By inspecting the information above we can find the variables available in the dataset and use  the <code class="docutils literal notranslate"><span class="pre">tabledap</span></code> function to download them.</p>
 <p>Note that the <code class="docutils literal notranslate"><span class="pre">%%R</span> <span class="pre">-o</span> <span class="pre">rdf</span></code> will export the <code class="docutils literal notranslate"><span class="pre">rdf</span></code> variable back to the Python workspace.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -785,7 +785,6 @@ df &lt;- tabledap(
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
-
 
 <span class="n">cols</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;longitude&quot;</span><span class="p">,</span> <span class="s2">&quot;latitude&quot;</span><span class="p">,</span> <span class="s2">&quot;depth&quot;</span><span class="p">,</span> <span class="s2">&quot;organismQuantity&quot;</span><span class="p">]</span>
 <span class="n">df</span><span class="p">[</span><span class="n">cols</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">cols</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">pd</span><span class="o">.</span><span class="n">to_numeric</span><span class="p">)</span>
@@ -872,7 +871,7 @@ df &lt;- tabledap(
 </div></div></div>
 </div>
 <p>We can navigate to ERDDAP’s <a class="reference external" href="http://gcoos4.tamu.edu:8080/erddap/info/cremp_fk_v2_1996/index.html">info page</a> to find the variables description. Let’s check what is <code class="docutils literal notranslate"><span class="pre">organismQuantity</span></code>:</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>The is value of the derived information product, such as the numerical value for biomass. This term does not include units. Mean number of observed fish per species for 5 Minutes
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">The</span> <span class="ow">is</span> <span class="n">value</span> <span class="n">of</span> <span class="n">the</span> <span class="n">derived</span> <span class="n">information</span> <span class="n">product</span><span class="p">,</span> <span class="n">such</span> <span class="k">as</span> <span class="n">the</span> <span class="n">numerical</span> <span class="n">value</span> <span class="k">for</span> <span class="n">biomass</span><span class="o">.</span> <span class="n">This</span> <span class="n">term</span> <span class="n">does</span> <span class="ow">not</span> <span class="n">include</span> <span class="n">units</span><span class="o">.</span> <span class="n">Mean</span> <span class="n">number</span> <span class="n">of</span> <span class="n">observed</span> <span class="n">fish</span> <span class="n">per</span> <span class="n">species</span> <span class="k">for</span> <span class="mi">5</span> <span class="n">Minutes</span>
 </pre></div>
 </div>
 <p>We can see that <code class="docutils literal notranslate"><span class="pre">organismQuantity</span></code> has a lot of zero values,

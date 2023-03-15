@@ -814,11 +814,27 @@ title="Print to PDF"
         <span class="s2">&quot;publisher_institution&quot;</span><span class="p">:</span> <span class="s2">&quot;IOOS&quot;</span><span class="p">,</span>
         <span class="s2">&quot;publisher_url&quot;</span><span class="p">:</span> <span class="s2">&quot;https://ioos.github.io/ioos_code_lab/content/intro.html&quot;</span><span class="p">,</span>
     <span class="p">},</span>
-    <span class="s2">&quot;longitude&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;units&quot;</span><span class="p">:</span> <span class="s2">&quot;degrees_east&quot;</span><span class="p">,</span> <span class="s2">&quot;standard_name&quot;</span><span class="p">:</span> <span class="s2">&quot;longitude&quot;</span><span class="p">,},</span>
-    <span class="s2">&quot;latitude&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;units&quot;</span><span class="p">:</span> <span class="s2">&quot;degrees_north&quot;</span><span class="p">,</span> <span class="s2">&quot;standard_name&quot;</span><span class="p">:</span> <span class="s2">&quot;latitude&quot;</span><span class="p">,},</span>
-    <span class="s2">&quot;z&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;units&quot;</span><span class="p">:</span> <span class="s2">&quot;m&quot;</span><span class="p">,</span> <span class="s2">&quot;standard_name&quot;</span><span class="p">:</span> <span class="s2">&quot;depth&quot;</span><span class="p">,</span> <span class="s2">&quot;positive&quot;</span><span class="p">:</span> <span class="s2">&quot;down&quot;</span><span class="p">,},</span>
-    <span class="s2">&quot;u&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;units&quot;</span><span class="p">:</span> <span class="s2">&quot;m/s&quot;</span><span class="p">,</span> <span class="s2">&quot;standard_name&quot;</span><span class="p">:</span> <span class="s2">&quot;eastward_sea_water_velocity&quot;</span><span class="p">,},</span>
-    <span class="s2">&quot;v&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;units&quot;</span><span class="p">:</span> <span class="s2">&quot;m/s&quot;</span><span class="p">,</span> <span class="s2">&quot;standard_name&quot;</span><span class="p">:</span> <span class="s2">&quot;northward_sea_water_velocity&quot;</span><span class="p">,},</span>
+    <span class="s2">&quot;longitude&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">&quot;units&quot;</span><span class="p">:</span> <span class="s2">&quot;degrees_east&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;standard_name&quot;</span><span class="p">:</span> <span class="s2">&quot;longitude&quot;</span><span class="p">,</span>
+    <span class="p">},</span>
+    <span class="s2">&quot;latitude&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">&quot;units&quot;</span><span class="p">:</span> <span class="s2">&quot;degrees_north&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;standard_name&quot;</span><span class="p">:</span> <span class="s2">&quot;latitude&quot;</span><span class="p">,</span>
+    <span class="p">},</span>
+    <span class="s2">&quot;z&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">&quot;units&quot;</span><span class="p">:</span> <span class="s2">&quot;m&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;standard_name&quot;</span><span class="p">:</span> <span class="s2">&quot;depth&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;positive&quot;</span><span class="p">:</span> <span class="s2">&quot;down&quot;</span><span class="p">,</span>
+    <span class="p">},</span>
+    <span class="s2">&quot;u&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">&quot;units&quot;</span><span class="p">:</span> <span class="s2">&quot;m/s&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;standard_name&quot;</span><span class="p">:</span> <span class="s2">&quot;eastward_sea_water_velocity&quot;</span><span class="p">,</span>
+    <span class="p">},</span>
+    <span class="s2">&quot;v&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">&quot;units&quot;</span><span class="p">:</span> <span class="s2">&quot;m/s&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;standard_name&quot;</span><span class="p">:</span> <span class="s2">&quot;northward_sea_water_velocity&quot;</span><span class="p">,</span>
+    <span class="p">},</span>
     <span class="s2">&quot;station&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;cf_role&quot;</span><span class="p">:</span> <span class="s2">&quot;timeseries_id&quot;</span><span class="p">},</span>
 <span class="p">}</span>
 </pre></div>
@@ -840,7 +856,10 @@ title="Print to PDF"
 
 <span class="n">df</span> <span class="o">=</span> <span class="n">downcast_dataframe</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>  <span class="c1"># safely cast depth np.int64 to np.int32</span>
 <span class="n">dsg</span> <span class="o">=</span> <span class="n">OrthogonalMultidimensionalTimeseries</span><span class="o">.</span><span class="n">from_dataframe</span><span class="p">(</span>
-    <span class="n">df</span><span class="p">,</span> <span class="n">output</span><span class="o">=</span><span class="s2">&quot;fake_buoy.nc&quot;</span><span class="p">,</span> <span class="n">attributes</span><span class="o">=</span><span class="n">attributes</span><span class="p">,</span> <span class="n">axes</span><span class="o">=</span><span class="n">axes</span><span class="p">,</span>
+    <span class="n">df</span><span class="p">,</span>
+    <span class="n">output</span><span class="o">=</span><span class="s2">&quot;fake_buoy.nc&quot;</span><span class="p">,</span>
+    <span class="n">attributes</span><span class="o">=</span><span class="n">attributes</span><span class="p">,</span>
+    <span class="n">axes</span><span class="o">=</span><span class="n">axes</span><span class="p">,</span>
 <span class="p">)</span>
 </pre></div>
 </div>

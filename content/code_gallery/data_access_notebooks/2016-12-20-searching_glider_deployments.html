@@ -643,7 +643,6 @@ title="Print to PDF"
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">requests</span>
 
-
 <span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;http://data.ioos.us/gliders/providers/api/deployment&quot;</span>
 
 <span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
@@ -705,7 +704,6 @@ title="Print to PDF"
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">iris</span>
-
 
 <span class="c1"># Get this specific glider because it looks cool ;-)</span>
 <span class="k">for</span> <span class="n">deployment</span> <span class="ow">in</span> <span class="n">deployments</span><span class="p">:</span>
@@ -804,7 +802,6 @@ title="Print to PDF"
 
 
 <span class="k">def</span> <span class="nf">plot_glider</span><span class="p">(</span><span class="n">cube</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="n">plt</span><span class="o">.</span><span class="n">cm</span><span class="o">.</span><span class="n">viridis</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">9</span><span class="p">,</span> <span class="mf">3.75</span><span class="p">),</span> <span class="n">track_inset</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
-
     <span class="n">data</span> <span class="o">=</span> <span class="n">apply_range</span><span class="p">(</span><span class="n">cube</span><span class="p">)</span>
     <span class="n">x</span> <span class="o">=</span> <span class="n">apply_range</span><span class="p">(</span><span class="n">cube</span><span class="o">.</span><span class="n">coord</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="s2">&quot;X&quot;</span><span class="p">))</span>
     <span class="n">y</span> <span class="o">=</span> <span class="n">apply_range</span><span class="p">(</span><span class="n">cube</span><span class="o">.</span><span class="n">coord</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="s2">&quot;Y&quot;</span><span class="p">))</span>
@@ -910,7 +907,7 @@ Here is another example that finds all glider deployments within a boundary box.
     <span class="n">track_url</span> <span class="o">=</span> <span class="s2">&quot;http://data.ioos.us/gliders/status/api/track/</span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span>
     <span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">track_url</span><span class="p">(</span><span class="n">deployment</span><span class="p">[</span><span class="s2">&quot;deployment_dir&quot;</span><span class="p">]))</span>
     <span class="k">if</span> <span class="n">response</span><span class="o">.</span><span class="n">status_code</span> <span class="o">!=</span> <span class="mi">200</span><span class="p">:</span>
-        <span class="k">raise</span> <span class="ne">IOError</span><span class="p">(</span>
+        <span class="k">raise</span> <span class="ne">OSError</span><span class="p">(</span>
             <span class="s2">&quot;Failed to get Glider Track for </span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n">deployment</span><span class="p">[</span><span class="s2">&quot;deployment_dir&quot;</span><span class="p">]</span>
         <span class="p">)</span>
     <span class="n">geometry</span> <span class="o">=</span> <span class="n">parse_geometry</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">json</span><span class="p">())</span>
@@ -938,7 +935,6 @@ Here is another example that finds all glider deployments within a boundary box.
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">shapely.geometry</span> <span class="kn">import</span> <span class="n">box</span>
 
-
 <span class="n">search_box</span> <span class="o">=</span> <span class="n">box</span><span class="p">(</span><span class="n">bbox</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">],</span> <span class="n">bbox</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">1</span><span class="p">],</span> <span class="n">bbox</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">0</span><span class="p">],</span> <span class="n">bbox</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">1</span><span class="p">])</span>
 
 <span class="n">inside</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">()</span>
@@ -946,7 +942,7 @@ Here is another example that finds all glider deployments within a boundary box.
 <span class="k">for</span> <span class="n">deployment</span> <span class="ow">in</span> <span class="n">response</span><span class="o">.</span><span class="n">json</span><span class="p">()[</span><span class="s2">&quot;results&quot;</span><span class="p">][</span><span class="o">-</span><span class="mi">10</span><span class="p">:]:</span>
     <span class="k">try</span><span class="p">:</span>
         <span class="n">coords</span> <span class="o">=</span> <span class="n">fetch_trajectory</span><span class="p">(</span><span class="n">deployment</span><span class="p">)</span>
-    <span class="k">except</span> <span class="ne">IOError</span><span class="p">:</span>
+    <span class="k">except</span> <span class="ne">OSError</span><span class="p">:</span>
         <span class="k">continue</span>
     <span class="k">if</span> <span class="n">search_box</span><span class="o">.</span><span class="n">intersects</span><span class="p">(</span><span class="n">coords</span><span class="p">):</span>
         <span class="n">inside</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="n">deployment</span><span class="p">[</span><span class="s2">&quot;name&quot;</span><span class="p">]:</span> <span class="n">coords</span><span class="p">})</span>

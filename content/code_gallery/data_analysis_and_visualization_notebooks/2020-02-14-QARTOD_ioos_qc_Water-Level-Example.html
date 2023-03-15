@@ -648,19 +648,16 @@ title="Print to PDF"
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">qc_config</span> <span class="o">=</span> <span class="p">{</span>
     <span class="s2">&quot;qartod&quot;</span><span class="p">:</span> <span class="p">{</span>
-      <span class="s2">&quot;gross_range_test&quot;</span><span class="p">:</span> <span class="p">{</span>
-        <span class="s2">&quot;fail_span&quot;</span><span class="p">:</span> <span class="p">[</span><span class="o">-</span><span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">],</span>
-        <span class="s2">&quot;suspect_span&quot;</span><span class="p">:</span> <span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
-      <span class="p">},</span>
-      <span class="s2">&quot;flat_line_test&quot;</span><span class="p">:</span> <span class="p">{</span>
-        <span class="s2">&quot;tolerance&quot;</span><span class="p">:</span> <span class="mf">0.001</span><span class="p">,</span>
-        <span class="s2">&quot;suspect_threshold&quot;</span><span class="p">:</span> <span class="mi">10800</span><span class="p">,</span>
-        <span class="s2">&quot;fail_threshold&quot;</span><span class="p">:</span> <span class="mi">21600</span>
-      <span class="p">},</span>
-      <span class="s2">&quot;spike_test&quot;</span><span class="p">:</span> <span class="p">{</span>
-        <span class="s2">&quot;suspect_threshold&quot;</span><span class="p">:</span> <span class="mf">0.8</span><span class="p">,</span>
-        <span class="s2">&quot;fail_threshold&quot;</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span>
-      <span class="p">}</span>
+        <span class="s2">&quot;gross_range_test&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;fail_span&quot;</span><span class="p">:</span> <span class="p">[</span><span class="o">-</span><span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">],</span> <span class="s2">&quot;suspect_span&quot;</span><span class="p">:</span> <span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]},</span>
+        <span class="s2">&quot;flat_line_test&quot;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s2">&quot;tolerance&quot;</span><span class="p">:</span> <span class="mf">0.001</span><span class="p">,</span>
+            <span class="s2">&quot;suspect_threshold&quot;</span><span class="p">:</span> <span class="mi">10800</span><span class="p">,</span>
+            <span class="s2">&quot;fail_threshold&quot;</span><span class="p">:</span> <span class="mi">21600</span><span class="p">,</span>
+        <span class="p">},</span>
+        <span class="s2">&quot;spike_test&quot;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s2">&quot;suspect_threshold&quot;</span><span class="p">:</span> <span class="mf">0.8</span><span class="p">,</span>
+            <span class="s2">&quot;fail_threshold&quot;</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span>
+        <span class="p">},</span>
     <span class="p">}</span>
 <span class="p">}</span>
 </pre></div>
@@ -672,13 +669,11 @@ title="Print to PDF"
 <!-- Note that the data may change in the future. For reproducibility's sake we will save the data downloaded into a CSV file. --><div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">cf_xarray</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">cf_xarray</span><span class="o">.</span><span class="n">__version__</span><span class="p">)</span>
 <span class="kn">from</span> <span class="nn">erddapy</span> <span class="kn">import</span> <span class="n">ERDDAP</span>
 
-
-<span class="n">e</span> <span class="o">=</span> <span class="n">ERDDAP</span><span class="p">(</span>
-    <span class="n">server</span><span class="o">=</span><span class="s2">&quot;http://erddap.aoos.org/erddap/&quot;</span><span class="p">,</span>
-    <span class="n">protocol</span><span class="o">=</span><span class="s2">&quot;tabledap&quot;</span>
-<span class="p">)</span>
+<span class="n">e</span> <span class="o">=</span> <span class="n">ERDDAP</span><span class="p">(</span><span class="n">server</span><span class="o">=</span><span class="s2">&quot;http://erddap.aoos.org/erddap/&quot;</span><span class="p">,</span> <span class="n">protocol</span><span class="o">=</span><span class="s2">&quot;tabledap&quot;</span><span class="p">)</span>
 <span class="n">e</span><span class="o">.</span><span class="n">dataset_id</span> <span class="o">=</span> <span class="s2">&quot;kotzebue-alaska-water-level&quot;</span>
 <span class="n">e</span><span class="o">.</span><span class="n">constraints</span> <span class="o">=</span> <span class="p">{</span>
     <span class="s2">&quot;time&gt;=&quot;</span><span class="p">:</span> <span class="s2">&quot;2018-09-05T21:00:00Z&quot;</span><span class="p">,</span>
@@ -730,13 +725,12 @@ Data Variables:
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">ioos_qc.config</span> <span class="kn">import</span> <span class="n">QcConfig</span>
 
-
 <span class="n">qc</span> <span class="o">=</span> <span class="n">QcConfig</span><span class="p">(</span><span class="n">qc_config</span><span class="p">)</span>
 
 <span class="c1"># The result is always a list but we only want the first, one and only in this case, variable.</span>
 <span class="n">variable_name</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">cf</span><span class="o">.</span><span class="n">standard_names</span><span class="p">[</span><span class="s2">&quot;sea_surface_height_above_sea_level&quot;</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
 
-<span class="n">qc_results</span> <span class="o">=</span>  <span class="n">qc</span><span class="o">.</span><span class="n">run</span><span class="p">(</span>
+<span class="n">qc_results</span> <span class="o">=</span> <span class="n">qc</span><span class="o">.</span><span class="n">run</span><span class="p">(</span>
     <span class="n">inp</span><span class="o">=</span><span class="n">data</span><span class="p">[</span><span class="n">variable_name</span><span class="p">],</span>
     <span class="n">tinp</span><span class="o">=</span><span class="n">data</span><span class="o">.</span><span class="n">cf</span><span class="p">[</span><span class="s2">&quot;T&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">to_numpy</span><span class="p">(),</span>
 <span class="p">)</span>
@@ -772,11 +766,8 @@ Data Variables:
 <p>Now we can write a plotting function that will read these results and flag the data.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">datetime</span>
-
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-
 
 
 <span class="k">def</span> <span class="nf">plot_results</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">variable_name</span><span class="p">,</span> <span class="n">results</span><span class="p">,</span> <span class="n">title</span><span class="p">,</span> <span class="n">test_name</span><span class="p">):</span>
@@ -791,15 +782,27 @@ Data Variables:
 
     <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">15</span><span class="p">,</span> <span class="mf">3.75</span><span class="p">))</span>
     <span class="n">fig</span><span class="o">.</span><span class="n">set_title</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">test_name</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">title</span><span class="si">}</span><span class="s2">&quot;</span>
-    
+
     <span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">&quot;Time&quot;</span><span class="p">)</span>
     <span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">&quot;Observation Value&quot;</span><span class="p">)</span>
 
     <span class="n">kw</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;marker&quot;</span><span class="p">:</span> <span class="s2">&quot;o&quot;</span><span class="p">,</span> <span class="s2">&quot;linestyle&quot;</span><span class="p">:</span> <span class="s2">&quot;none&quot;</span><span class="p">}</span>
-    <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">time</span><span class="p">,</span> <span class="n">obs</span><span class="p">,</span>  <span class="n">label</span><span class="o">=</span><span class="s2">&quot;obs&quot;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;#A6CEE3&quot;</span><span class="p">)</span>
-    <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">time</span><span class="p">,</span> <span class="n">qc_notrun</span><span class="p">,</span> <span class="n">markersize</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;qc not run&quot;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;gray&quot;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.2</span><span class="p">,</span> <span class="o">**</span><span class="n">kw</span><span class="p">)</span>
-    <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">time</span><span class="p">,</span> <span class="n">qc_pass</span><span class="p">,</span> <span class="n">markersize</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;qc pass&quot;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;green&quot;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> <span class="o">**</span><span class="n">kw</span><span class="p">)</span>
-    <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">time</span><span class="p">,</span> <span class="n">qc_suspect</span><span class="p">,</span> <span class="n">markersize</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;qc suspect&quot;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;orange&quot;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.7</span><span class="p">,</span> <span class="o">**</span><span class="n">kw</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">time</span><span class="p">,</span> <span class="n">obs</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;obs&quot;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;#A6CEE3&quot;</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span>
+        <span class="n">time</span><span class="p">,</span> <span class="n">qc_notrun</span><span class="p">,</span> <span class="n">markersize</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;qc not run&quot;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;gray&quot;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.2</span><span class="p">,</span> <span class="o">**</span><span class="n">kw</span>
+    <span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span>
+        <span class="n">time</span><span class="p">,</span> <span class="n">qc_pass</span><span class="p">,</span> <span class="n">markersize</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;qc pass&quot;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;green&quot;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> <span class="o">**</span><span class="n">kw</span>
+    <span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span>
+        <span class="n">time</span><span class="p">,</span>
+        <span class="n">qc_suspect</span><span class="p">,</span>
+        <span class="n">markersize</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span>
+        <span class="n">label</span><span class="o">=</span><span class="s2">&quot;qc suspect&quot;</span><span class="p">,</span>
+        <span class="n">color</span><span class="o">=</span><span class="s2">&quot;orange&quot;</span><span class="p">,</span>
+        <span class="n">alpha</span><span class="o">=</span><span class="mf">0.7</span><span class="p">,</span>
+        <span class="o">**</span><span class="n">kw</span><span class="p">,</span>
+    <span class="p">)</span>
     <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">time</span><span class="p">,</span> <span class="n">qc_fail</span><span class="p">,</span> <span class="n">markersize</span><span class="o">=</span><span class="mi">6</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;qc fail&quot;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;red&quot;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span> <span class="o">**</span><span class="n">kw</span><span class="p">)</span>
     <span class="n">ax</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
 
@@ -809,7 +812,7 @@ Data Variables:
 </div>
 </div>
 </div>
-<p>The gross range test test should fail data outside the <span class="math notranslate nohighlight">\(\pm\)</span> 10 range and suspect data below -2, and greater than 3. As one can easily see all the major spikes are flagged as expected.</p>
+<p>The gross range test test should fail data outside the <span class="math notranslate nohighlight">\(\\pm\)</span> 10 range and suspect data below -2, and greater than 3. As one can easily see all the major spikes are flagged as expected.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plot_results</span><span class="p">(</span>
@@ -861,7 +864,7 @@ Data Variables:
 <img alt="../../../_images/2020-02-14-QARTOD_ioos_qc_Water-Level-Example_12_0.png" src="../../../_images/2020-02-14-QARTOD_ioos_qc_Water-Level-Example_12_0.png" />
 </div>
 </div>
-<p>This notebook was adapt from Jessica Austin and Kyle Wilcox’s <a class="reference external" href="https://github.com/ioos/ioos_qc/blob/b34b3762d659362fb3af11f52d8905d18cd6ec7b/docs/source/examples/QartodTestExample_WaterLevel.ipynb">original ioos_qc examples</a>. Please <a class="reference external" href="https://ioos.github.io/ioos_qc/">see the <code class="docutils literal notranslate"><span class="pre">ioos_qc</span></code> documentation</a> for more examples.</p>
+<p>This notebook was adapted from Jessica Austin and Kyle Wilcox’s <a class="reference external" href="https://github.com/ioos/ioos_qc/blob/b34b3762d659362fb3af11f52d8905d18cd6ec7b/docs/source/examples/QartodTestExample_WaterLevel.ipynb">original ioos_qc examples</a>. Please <a class="reference external" href="https://ioos.github.io/ioos_qc/">see the <code class="docutils literal notranslate"><span class="pre">ioos_qc</span></code> documentation</a> for more examples.</p>
 </section>
 
     <script type="text/x-thebe-config">

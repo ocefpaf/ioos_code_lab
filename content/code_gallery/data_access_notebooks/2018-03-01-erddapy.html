@@ -696,7 +696,10 @@ title="Print to PDF"
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">erddapy</span> <span class="kn">import</span> <span class="n">ERDDAP</span>
 
-<span class="n">e</span> <span class="o">=</span> <span class="n">ERDDAP</span><span class="p">(</span><span class="n">server</span><span class="o">=</span><span class="n">server</span><span class="p">,</span> <span class="n">protocol</span><span class="o">=</span><span class="n">protocol</span><span class="p">,)</span>
+<span class="n">e</span> <span class="o">=</span> <span class="n">ERDDAP</span><span class="p">(</span>
+    <span class="n">server</span><span class="o">=</span><span class="n">server</span><span class="p">,</span>
+    <span class="n">protocol</span><span class="o">=</span><span class="n">protocol</span><span class="p">,</span>
+<span class="p">)</span>
 
 
 <span class="n">e</span><span class="o">.</span><span class="n">dataset_id</span> <span class="o">=</span> <span class="n">dataset_id</span>
@@ -719,7 +722,6 @@ title="Print to PDF"
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">show_iframe</span><span class="p">(</span><span class="n">src</span><span class="p">):</span>
     <span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">IFrame</span>
 
-    <span class="n">iframe</span> <span class="o">=</span> <span class="s1">&#39;&lt;iframe src=&quot;</span><span class="si">{src}</span><span class="s1">&quot; width=&quot;100%&quot; height=&quot;950&quot;&gt;&lt;/iframe&gt;&#39;</span><span class="o">.</span><span class="n">format</span>
     <span class="k">return</span> <span class="n">IFrame</span><span class="p">(</span><span class="n">src</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="s2">&quot;100%&quot;</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="s2">&quot;950px&quot;</span><span class="p">)</span>
 
 
@@ -779,7 +781,10 @@ title="Print to PDF"
 <p><code class="docutils literal notranslate"><span class="pre">erddapy</span></code> also brings some simple methods to download the data in some common data formats, like <code class="docutils literal notranslate"><span class="pre">pandas.DataFrame</span></code> and <code class="docutils literal notranslate"><span class="pre">xarray.Dataset</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">e</span><span class="o">.</span><span class="n">to_pandas</span><span class="p">(</span><span class="n">index_col</span><span class="o">=</span><span class="s2">&quot;time (UTC)&quot;</span><span class="p">,</span> <span class="n">parse_dates</span><span class="o">=</span><span class="kc">True</span><span class="p">,)</span><span class="o">.</span><span class="n">dropna</span><span class="p">()</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">e</span><span class="o">.</span><span class="n">to_pandas</span><span class="p">(</span>
+    <span class="n">index_col</span><span class="o">=</span><span class="s2">&quot;time (UTC)&quot;</span><span class="p">,</span>
+    <span class="n">parse_dates</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+<span class="p">)</span><span class="o">.</span><span class="n">dropna</span><span class="p">()</span>
 
 
 <span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
@@ -1459,7 +1464,8 @@ whoi_406-20160902T1700
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">e</span><span class="o">.</span><span class="n">get_var_by_attr</span><span class="p">(</span>
-    <span class="n">dataset_id</span><span class="o">=</span><span class="n">gliders</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">cdm_profile_variables</span><span class="o">=</span><span class="k">lambda</span> <span class="n">v</span><span class="p">:</span> <span class="n">v</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="n">dataset_id</span><span class="o">=</span><span class="n">gliders</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span>
+    <span class="n">cdm_profile_variables</span><span class="o">=</span><span class="k">lambda</span> <span class="n">v</span><span class="p">:</span> <span class="n">v</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">,</span>
 <span class="p">)</span>
 </pre></div>
 </div>
@@ -1473,7 +1479,8 @@ whoi_406-20160902T1700
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">e</span><span class="o">.</span><span class="n">get_var_by_attr</span><span class="p">(</span>
-    <span class="n">dataset_id</span><span class="o">=</span><span class="s2">&quot;whoi_406-20160902T1700&quot;</span><span class="p">,</span> <span class="n">standard_name</span><span class="o">=</span><span class="s2">&quot;sea_water_temperature&quot;</span><span class="p">,</span>
+    <span class="n">dataset_id</span><span class="o">=</span><span class="s2">&quot;whoi_406-20160902T1700&quot;</span><span class="p">,</span>
+    <span class="n">standard_name</span><span class="o">=</span><span class="s2">&quot;sea_water_temperature&quot;</span><span class="p">,</span>
 <span class="p">)</span>
 </pre></div>
 </div>
@@ -1487,7 +1494,8 @@ whoi_406-20160902T1700
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">axis</span> <span class="o">=</span> <span class="n">e</span><span class="o">.</span><span class="n">get_var_by_attr</span><span class="p">(</span>
-    <span class="n">dataset_id</span><span class="o">=</span><span class="s2">&quot;whoi_406-20160902T1700&quot;</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="k">lambda</span> <span class="n">v</span><span class="p">:</span> <span class="n">v</span> <span class="ow">in</span> <span class="p">[</span><span class="s2">&quot;X&quot;</span><span class="p">,</span> <span class="s2">&quot;Y&quot;</span><span class="p">,</span> <span class="s2">&quot;Z&quot;</span><span class="p">,</span> <span class="s2">&quot;T&quot;</span><span class="p">],</span>
+    <span class="n">dataset_id</span><span class="o">=</span><span class="s2">&quot;whoi_406-20160902T1700&quot;</span><span class="p">,</span>
+    <span class="n">axis</span><span class="o">=</span><span class="k">lambda</span> <span class="n">v</span><span class="p">:</span> <span class="n">v</span> <span class="ow">in</span> <span class="p">[</span><span class="s2">&quot;X&quot;</span><span class="p">,</span> <span class="s2">&quot;Y&quot;</span><span class="p">,</span> <span class="s2">&quot;Z&quot;</span><span class="p">,</span> <span class="s2">&quot;T&quot;</span><span class="p">],</span>
 <span class="p">)</span>
 <span class="n">axis</span>
 </pre></div>
@@ -1512,7 +1520,7 @@ whoi_406-20160902T1700
         <span class="n">dataset_id</span><span class="o">=</span><span class="n">dataset_id</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="k">lambda</span> <span class="n">v</span><span class="p">:</span> <span class="n">v</span> <span class="ow">in</span> <span class="p">[</span><span class="s2">&quot;X&quot;</span><span class="p">,</span> <span class="s2">&quot;Y&quot;</span><span class="p">,</span> <span class="s2">&quot;Z&quot;</span><span class="p">,</span> <span class="s2">&quot;T&quot;</span><span class="p">]</span>
     <span class="p">)</span>
     <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">variables</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mi">4</span><span class="p">:</span>
-        <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span><span class="s2">&quot;Expected at least 4 axis, found </span><span class="si">{!r}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">variables</span><span class="p">))</span>
+        <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Expected at least 4 axis, found </span><span class="si">{</span><span class="n">variables</span><span class="si">!r}</span><span class="s2">&quot;</span><span class="p">)</span>
 
     <span class="n">var</span> <span class="o">=</span> <span class="n">e</span><span class="o">.</span><span class="n">get_var_by_attr</span><span class="p">(</span>
         <span class="n">dataset_id</span><span class="o">=</span><span class="n">dataset_id</span><span class="p">,</span> <span class="n">standard_name</span><span class="o">=</span><span class="k">lambda</span> <span class="n">v</span><span class="p">:</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">standard_names</span>
@@ -1532,6 +1540,7 @@ whoi_406-20160902T1700
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">time</span>
+
 <span class="kn">from</span> <span class="nn">erddapy.url_handling</span> <span class="kn">import</span> <span class="n">urlopen</span>
 
 
@@ -1554,7 +1563,7 @@ whoi_406-20160902T1700
         <span class="n">protocol</span><span class="o">=</span><span class="s2">&quot;tabledap&quot;</span><span class="p">,</span>
         <span class="n">variables</span><span class="o">=</span><span class="n">variables</span><span class="p">,</span>
         <span class="n">response</span><span class="o">=</span><span class="s2">&quot;csv&quot;</span><span class="p">,</span>
-        <span class="n">constraints</span><span class="o">=</span><span class="n">constraints</span>
+        <span class="n">constraints</span><span class="o">=</span><span class="n">constraints</span><span class="p">,</span>
     <span class="p">)</span>
     <span class="k">try</span><span class="p">:</span>
         <span class="n">df</span> <span class="o">=</span> <span class="n">download_csv</span><span class="p">(</span><span class="n">download_url</span><span class="p">)</span>

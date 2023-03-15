@@ -720,14 +720,13 @@ and the catalogs we will search.</p>
 <span class="n">os</span><span class="o">.</span><span class="n">makedirs</span><span class="p">(</span><span class="n">save_dir</span><span class="p">)</span>
 
 <span class="n">fmt</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="si">{:*^64}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">fmt</span><span class="p">(</span><span class="s2">&quot;Saving data inside directory </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">save_dir</span><span class="p">)))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">fmt</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Saving data inside directory </span><span class="si">{</span><span class="n">save_dir</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">))</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">fmt</span><span class="p">(</span><span class="s2">&quot; Run information &quot;</span><span class="p">))</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Run date: {:%Y-%m-</span><span class="si">%d</span><span class="s2"> %H:%M:%S}&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">datetime</span><span class="o">.</span><span class="n">utcnow</span><span class="p">()))</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Start: {:%Y-%m-</span><span class="si">%d</span><span class="s2"> %H:%M:%S}&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">config</span><span class="p">[</span><span class="s2">&quot;date&quot;</span><span class="p">][</span><span class="s2">&quot;start&quot;</span><span class="p">]))</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Stop: {:%Y-%m-</span><span class="si">%d</span><span class="s2"> %H:%M:%S}&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">config</span><span class="p">[</span><span class="s2">&quot;date&quot;</span><span class="p">][</span><span class="s2">&quot;stop&quot;</span><span class="p">]))</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Run date: </span><span class="si">{</span><span class="n">datetime</span><span class="o">.</span><span class="n">utcnow</span><span class="p">()</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Start: </span><span class="si">{</span><span class="n">config</span><span class="p">[</span><span class="s1">&#39;date&#39;</span><span class="p">][</span><span class="s1">&#39;start&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Stop: </span><span class="si">{</span><span class="n">config</span><span class="p">[</span><span class="s1">&#39;date&#39;</span><span class="p">][</span><span class="s1">&#39;stop&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span>
-    <span class="s2">&quot;Bounding box: </span><span class="si">{0:3.2f}</span><span class="s2">, </span><span class="si">{1:3.2f}</span><span class="s2">,&quot;</span>
-    <span class="s2">&quot;</span><span class="si">{2:3.2f}</span><span class="s2">, </span><span class="si">{3:3.2f}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="o">*</span><span class="n">config</span><span class="p">[</span><span class="s2">&quot;region&quot;</span><span class="p">][</span><span class="s2">&quot;bbox&quot;</span><span class="p">])</span>
+    <span class="sa">f</span><span class="s2">&quot;Bounding box: </span><span class="si">{</span><span class="n">config</span><span class="p">[</span><span class="s1">&#39;region&#39;</span><span class="p">][</span><span class="s1">&#39;bbox&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span><span class="si">:</span><span class="s2">3.2f</span><span class="si">}</span><span class="s2">, </span><span class="si">{</span><span class="n">config</span><span class="p">[</span><span class="s1">&#39;region&#39;</span><span class="p">][</span><span class="s1">&#39;bbox&#39;</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span><span class="si">:</span><span class="s2">3.2f</span><span class="si">}</span><span class="s2">, </span><span class="si">{</span><span class="n">config</span><span class="p">[</span><span class="s1">&#39;region&#39;</span><span class="p">][</span><span class="s1">&#39;bbox&#39;</span><span class="p">][</span><span class="mi">2</span><span class="p">]</span><span class="si">:</span><span class="s2">3.2f</span><span class="si">}</span><span class="s2">, </span><span class="si">{</span><span class="n">config</span><span class="p">[</span><span class="s1">&#39;region&#39;</span><span class="p">][</span><span class="s1">&#39;bbox&#39;</span><span class="p">][</span><span class="mi">3</span><span class="p">]</span><span class="si">:</span><span class="s2">3.2f</span><span class="si">}</span><span class="s2">&quot;</span>
 <span class="p">)</span>
 </pre></div>
 </div>
@@ -749,8 +748,8 @@ so we are filtering out all the <code class="docutils literal notranslate"><span
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">make_filter</span><span class="p">(</span><span class="n">config</span><span class="p">):</span>
-    <span class="kn">from</span> <span class="nn">owslib</span> <span class="kn">import</span> <span class="n">fes</span>
     <span class="kn">from</span> <span class="nn">ioos_tools.ioos</span> <span class="kn">import</span> <span class="n">fes_date_filter</span>
+    <span class="kn">from</span> <span class="nn">owslib</span> <span class="kn">import</span> <span class="n">fes</span>
 
     <span class="n">kw</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span>
         <span class="n">wildCard</span><span class="o">=</span><span class="s2">&quot;*&quot;</span><span class="p">,</span> <span class="n">escapeChar</span><span class="o">=</span><span class="s2">&quot;</span><span class="se">\\</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">singleChar</span><span class="o">=</span><span class="s2">&quot;?&quot;</span><span class="p">,</span> <span class="n">propertyname</span><span class="o">=</span><span class="s2">&quot;apiso:AnyText&quot;</span>
@@ -782,11 +781,11 @@ so we are filtering out all the <code class="docutils literal notranslate"><span
 <span class="n">dap_urls</span> <span class="o">=</span> <span class="p">[]</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">fmt</span><span class="p">(</span><span class="s2">&quot; Catalog information &quot;</span><span class="p">))</span>
 <span class="k">for</span> <span class="n">endpoint</span> <span class="ow">in</span> <span class="n">config</span><span class="p">[</span><span class="s2">&quot;catalogs&quot;</span><span class="p">]:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;URL: </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">endpoint</span><span class="p">))</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;URL: </span><span class="si">{</span><span class="n">endpoint</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
     <span class="k">try</span><span class="p">:</span>
         <span class="n">csw</span> <span class="o">=</span> <span class="n">CatalogueServiceWeb</span><span class="p">(</span><span class="n">endpoint</span><span class="p">,</span> <span class="n">timeout</span><span class="o">=</span><span class="mi">120</span><span class="p">)</span>
     <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">e</span><span class="p">))</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
         <span class="k">continue</span>
     <span class="n">csw</span> <span class="o">=</span> <span class="n">get_csw_records</span><span class="p">(</span><span class="n">csw</span><span class="p">,</span> <span class="n">filter_list</span><span class="p">,</span> <span class="n">esn</span><span class="o">=</span><span class="s2">&quot;full&quot;</span><span class="p">)</span>
     <span class="n">OPeNDAP</span> <span class="o">=</span> <span class="n">service_urls</span><span class="p">(</span><span class="n">csw</span><span class="o">.</span><span class="n">records</span><span class="p">,</span> <span class="n">identifier</span><span class="o">=</span><span class="s2">&quot;OPeNDAP:OPeNDAP&quot;</span><span class="p">)</span>
@@ -796,14 +795,14 @@ so we are filtering out all the <code class="docutils literal notranslate"><span
     <span class="n">dap</span> <span class="o">=</span> <span class="n">OPeNDAP</span> <span class="o">+</span> <span class="n">odp</span>
     <span class="n">dap_urls</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="n">dap</span><span class="p">)</span>
 
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Number of datasets available: </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">csw</span><span class="o">.</span><span class="n">records</span><span class="o">.</span><span class="n">keys</span><span class="p">())))</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Number of datasets available: </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">csw</span><span class="o">.</span><span class="n">records</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 
     <span class="k">for</span> <span class="n">rec</span><span class="p">,</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">csw</span><span class="o">.</span><span class="n">records</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">item</span><span class="o">.</span><span class="n">title</span><span class="p">))</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">item</span><span class="o">.</span><span class="n">title</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
     <span class="k">if</span> <span class="n">dap</span><span class="p">:</span>
         <span class="nb">print</span><span class="p">(</span><span class="n">fmt</span><span class="p">(</span><span class="s2">&quot; DAP &quot;</span><span class="p">))</span>
         <span class="k">for</span> <span class="n">url</span> <span class="ow">in</span> <span class="n">dap</span><span class="p">:</span>
-            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">{}</span><span class="s2">.html&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">url</span><span class="p">))</span>
+            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">url</span><span class="si">}</span><span class="s2">.html&quot;</span><span class="p">)</span>
     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
 
 <span class="c1"># Get only unique endpoints.</span>
@@ -887,14 +886,14 @@ And we’ll rely <code class="docutils literal notranslate"><span class="pre">CO
     <span class="k">try</span><span class="p">:</span>
         <span class="k">if</span> <span class="ow">not</span> <span class="n">is_station</span><span class="p">(</span><span class="n">url</span><span class="p">):</span>
             <span class="n">non_stations</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
-    <span class="k">except</span> <span class="p">(</span><span class="ne">IOError</span><span class="p">,</span> <span class="ne">OSError</span><span class="p">,</span> <span class="ne">RuntimeError</span><span class="p">,</span> <span class="ne">TimeoutError</span><span class="p">)</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Could not access URL </span><span class="si">{}</span><span class="s2">.html</span><span class="se">\n</span><span class="si">{!r}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">e</span><span class="p">))</span>
+    <span class="k">except</span> <span class="p">(</span><span class="ne">OSError</span><span class="p">,</span> <span class="ne">RuntimeError</span><span class="p">,</span> <span class="ne">TimeoutError</span><span class="p">)</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Could not access URL </span><span class="si">{</span><span class="n">url</span><span class="si">}</span><span class="s2">.html</span><span class="se">\n</span><span class="si">{</span><span class="n">e</span><span class="si">!r}</span><span class="s2">&quot;</span><span class="p">)</span>
 
 <span class="n">dap_urls</span> <span class="o">=</span> <span class="n">non_stations</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="n">fmt</span><span class="p">(</span><span class="s2">&quot; Filtered DAP &quot;</span><span class="p">))</span>
 <span class="k">for</span> <span class="n">url</span> <span class="ow">in</span> <span class="n">dap_urls</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">{}</span><span class="s2">.html&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">url</span><span class="p">))</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">url</span><span class="si">}</span><span class="s2">.html&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -929,7 +928,7 @@ http://www.smast.umassd.edu:8080/thredds/dodsC/FVCOM/NECOFS/Forecasts/NECOFS_FVC
 <span class="n">ofrs</span> <span class="o">=</span> <span class="n">collector_ndbc</span><span class="o">.</span><span class="n">server</span><span class="o">.</span><span class="n">offerings</span>
 <span class="n">title</span> <span class="o">=</span> <span class="n">collector_ndbc</span><span class="o">.</span><span class="n">server</span><span class="o">.</span><span class="n">identification</span><span class="o">.</span><span class="n">title</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">fmt</span><span class="p">(</span><span class="s2">&quot; NDBC Collector offerings &quot;</span><span class="p">))</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">{}</span><span class="s2">: </span><span class="si">{}</span><span class="s2"> offerings&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">title</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">ofrs</span><span class="p">)))</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">title</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">ofrs</span><span class="p">)</span><span class="si">}</span><span class="s2"> offerings&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1026,7 +1025,7 @@ National Data Buoy Center SOS: 1062 offerings
 <span class="n">ofrs</span> <span class="o">=</span> <span class="n">collector_coops</span><span class="o">.</span><span class="n">server</span><span class="o">.</span><span class="n">offerings</span>
 <span class="n">title</span> <span class="o">=</span> <span class="n">collector_coops</span><span class="o">.</span><span class="n">server</span><span class="o">.</span><span class="n">identification</span><span class="o">.</span><span class="n">title</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">fmt</span><span class="p">(</span><span class="s2">&quot; Collector offerings &quot;</span><span class="p">))</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">{}</span><span class="s2">: </span><span class="si">{}</span><span class="s2"> offerings&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">title</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">ofrs</span><span class="p">)))</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">title</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">ofrs</span><span class="p">)</span><span class="si">}</span><span class="s2"> offerings&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1177,7 +1176,7 @@ while the models can be 30 to 60 minutes.</p>
 <span class="nb">print</span><span class="p">(</span><span class="n">fmt</span><span class="p">(</span><span class="s2">&quot; Models &quot;</span><span class="p">))</span>
 <span class="n">cubes</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">()</span>
 <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">url</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">dap_urls</span><span class="p">):</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">[Reading url </span><span class="si">{}</span><span class="s2">/</span><span class="si">{}</span><span class="s2">]: </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">k</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">dap_urls</span><span class="p">),</span> <span class="n">url</span><span class="p">))</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">[Reading url </span><span class="si">{</span><span class="n">k</span> <span class="o">+</span> <span class="mi">1</span><span class="si">}</span><span class="s2">/</span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">dap_urls</span><span class="p">)</span><span class="si">}</span><span class="s2">]: </span><span class="si">{</span><span class="n">url</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
     <span class="k">try</span><span class="p">:</span>
         <span class="n">cube</span> <span class="o">=</span> <span class="n">quick_load_cubes</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">config</span><span class="p">[</span><span class="s2">&quot;cf_names&quot;</span><span class="p">],</span> <span class="n">callback</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">strict</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
         <span class="k">if</span> <span class="n">is_model</span><span class="p">(</span><span class="n">cube</span><span class="p">):</span>
@@ -1188,7 +1187,7 @@ while the models can be 30 to 60 minutes.</p>
                 <span class="n">units</span><span class="o">=</span><span class="n">config</span><span class="p">[</span><span class="s2">&quot;units&quot;</span><span class="p">],</span>
             <span class="p">)</span>
         <span class="k">else</span><span class="p">:</span>
-            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;[Not model data]: </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">url</span><span class="p">))</span>
+            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;[Not model data]: </span><span class="si">{</span><span class="n">url</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
             <span class="k">continue</span>
         <span class="n">cube</span> <span class="o">=</span> <span class="n">get_surface</span><span class="p">(</span><span class="n">cube</span><span class="p">)</span>
         <span class="n">mod_name</span> <span class="o">=</span> <span class="n">get_model_name</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
@@ -1200,7 +1199,7 @@ while the models can be 30 to 60 minutes.</p>
         <span class="n">CoordinateNotFoundError</span><span class="p">,</span>
         <span class="ne">IndexError</span><span class="p">,</span>
     <span class="p">)</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Cannot get cube for: </span><span class="si">{}</span><span class="se">\n</span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">e</span><span class="p">))</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Cannot get cube for: </span><span class="si">{</span><span class="n">url</span><span class="si">}</span><span class="se">\n</span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1251,13 +1250,13 @@ Cannot find [&#39;sea_water_temperature&#39;, &#39;sea_surface_temperature&#39;,
 <span class="kn">from</span> <span class="nn">iris.pandas</span> <span class="kn">import</span> <span class="n">as_series</span>
 
 <span class="k">for</span> <span class="n">mod_name</span><span class="p">,</span> <span class="n">cube</span> <span class="ow">in</span> <span class="n">cubes</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
-    <span class="n">fname</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="si">{}</span><span class="s2">.nc&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">mod_name</span><span class="p">)</span>
+    <span class="n">fname</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">mod_name</span><span class="si">}</span><span class="s2">.nc&quot;</span>
     <span class="n">fname</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">save_dir</span><span class="p">,</span> <span class="n">fname</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">fmt</span><span class="p">(</span><span class="s2">&quot; Downloading to file </span><span class="si">{}</span><span class="s2"> &quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">fname</span><span class="p">)))</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">fmt</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot; Downloading to file </span><span class="si">{</span><span class="n">fname</span><span class="si">}</span><span class="s2"> &quot;</span><span class="p">))</span>
     <span class="k">try</span><span class="p">:</span>
         <span class="n">tree</span><span class="p">,</span> <span class="n">lon</span><span class="p">,</span> <span class="n">lat</span> <span class="o">=</span> <span class="n">make_tree</span><span class="p">(</span><span class="n">cube</span><span class="p">)</span>
     <span class="k">except</span> <span class="n">CoordinateNotFoundError</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Cannot make KDTree for: </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">mod_name</span><span class="p">))</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Cannot make KDTree for: </span><span class="si">{</span><span class="n">mod_name</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
         <span class="k">continue</span>
     <span class="c1"># Get model series at observed locations.</span>
     <span class="n">raw_series</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">()</span>
@@ -1270,7 +1269,7 @@ Cannot find [&#39;sea_water_temperature&#39;, &#39;sea_surface_temperature&#39;,
             <span class="k">try</span><span class="p">:</span>
                 <span class="n">series</span><span class="p">,</span> <span class="n">dist</span><span class="p">,</span> <span class="n">idx</span> <span class="o">=</span> <span class="n">get_nearest_water</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kw</span><span class="p">)</span>
             <span class="k">except</span> <span class="ne">RuntimeError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
-                <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Cannot download </span><span class="si">{!r}</span><span class="s2">.</span><span class="se">\n</span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">cube</span><span class="p">,</span> <span class="n">e</span><span class="p">))</span>
+                <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Cannot download </span><span class="si">{</span><span class="n">cube</span><span class="si">!r}</span><span class="s2">.</span><span class="se">\n</span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
                 <span class="n">series</span> <span class="o">=</span> <span class="kc">None</span>
         <span class="k">except</span> <span class="ne">ValueError</span><span class="p">:</span>
             <span class="n">status</span> <span class="o">=</span> <span class="s2">&quot;No Data&quot;</span>
@@ -1299,7 +1298,7 @@ Cannot find [&#39;sea_water_temperature&#39;, &#39;sea_surface_temperature&#39;,
             <span class="n">cube</span><span class="o">.</span><span class="n">attributes</span> <span class="o">=</span> <span class="p">{}</span>
             <span class="n">iris</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="n">cube</span><span class="p">,</span> <span class="n">fname</span><span class="p">)</span>
         <span class="k">del</span> <span class="n">cube</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Finished processing [</span><span class="si">{}</span><span class="s2">]&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">mod_name</span><span class="p">))</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Finished processing [</span><span class="si">{</span><span class="n">mod_name</span><span class="si">}</span><span class="s2">]&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1327,7 +1326,7 @@ Finished processing [Forecasts-NECOFS_FVCOM_OCEAN_MASSBAY_FORECAST.nc#fillmismat
 </div>
 <p>Now it is possible to compute some simple comparison metrics. First we’ll calculate the model mean bias:</p>
 <div class="math notranslate nohighlight">
-\[ \text{MB} = \mathbf{\overline{m}} - \mathbf{\overline{o}}\]</div>
+\[\begin{split} \\text{MB} = \\mathbf{\\overline{m}} - \\mathbf{\\overline{o}}\end{split}\]</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">ioos_tools.ioos</span> <span class="kn">import</span> <span class="n">stations_keys</span>
@@ -1357,9 +1356,9 @@ Finished processing [Forecasts-NECOFS_FVCOM_OCEAN_MASSBAY_FORECAST.nc#fillmismat
 </div>
 </div>
 </div>
-<p>And the root mean squared rrror of the deviations from the mean:
-$<span class="math notranslate nohighlight">\( \text{CRMS} = \sqrt{\left(\mathbf{m'} - \mathbf{o'}\right)^2}\)</span>$</p>
-<p>where: <span class="math notranslate nohighlight">\(\mathbf{m'} = \mathbf{m} - \mathbf{\overline{m}}\)</span> and <span class="math notranslate nohighlight">\(\mathbf{o'} = \mathbf{o} - \mathbf{\overline{o}}\)</span></p>
+<p>And the root mean squared error of the deviations from the mean:
+$<span class="math notranslate nohighlight">\( \\text{CRMS} = \\sqrt{\\left(\\mathbf{m'} - \\mathbf{o'}\\right)^2}\)</span>$</p>
+<p>where: <span class="math notranslate nohighlight">\(\\mathbf{m'} = \\mathbf{m} - \\mathbf{\\overline{m}}\)</span> and <span class="math notranslate nohighlight">\(\\mathbf{o'} = \\mathbf{o} - \\mathbf{\\overline{o}}\)</span></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">ioos_tools.skill_score</span> <span class="kn">import</span> <span class="n">rmse</span>
@@ -1426,7 +1425,10 @@ $<span class="math notranslate nohighlight">\( \text{CRMS} = \sqrt{\left(\mathbf
 
     <span class="k">if</span> <span class="n">line</span><span class="p">:</span>
         <span class="n">p</span> <span class="o">=</span> <span class="n">folium</span><span class="o">.</span><span class="n">PolyLine</span><span class="p">(</span>
-            <span class="n">get_coordinates</span><span class="p">(</span><span class="n">bbox</span><span class="p">),</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;#FF0000&quot;</span><span class="p">,</span> <span class="n">weight</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">opacity</span><span class="o">=</span><span class="mf">0.9</span><span class="p">,</span>
+            <span class="n">get_coordinates</span><span class="p">(</span><span class="n">bbox</span><span class="p">),</span>
+            <span class="n">color</span><span class="o">=</span><span class="s2">&quot;#FF0000&quot;</span><span class="p">,</span>
+            <span class="n">weight</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span>
+            <span class="n">opacity</span><span class="o">=</span><span class="mf">0.9</span><span class="p">,</span>
         <span class="p">)</span>
         <span class="n">p</span><span class="o">.</span><span class="n">add_to</span><span class="p">(</span><span class="n">m</span><span class="p">)</span>
     <span class="k">return</span> <span class="n">m</span>
@@ -1556,7 +1558,7 @@ $<span class="math notranslate nohighlight">\( \text{CRMS} = \sqrt{\left(\mathbf
             <span class="n">p</span><span class="o">.</span><span class="n">add_tools</span><span class="p">(</span>
                 <span class="n">HoverTool</span><span class="p">(</span>
                     <span class="n">tooltips</span><span class="o">=</span><span class="p">[</span>
-                        <span class="p">(</span><span class="s2">&quot;Name&quot;</span><span class="p">,</span> <span class="s2">&quot;</span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">titles</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">column</span><span class="p">,</span> <span class="n">column</span><span class="p">))),</span>
+                        <span class="p">(</span><span class="s2">&quot;Name&quot;</span><span class="p">,</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">titles</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">column</span><span class="p">,</span> <span class="n">column</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">),</span>
                         <span class="p">(</span><span class="s2">&quot;Bias&quot;</span><span class="p">,</span> <span class="n">bias</span><span class="p">),</span>
                         <span class="p">(</span><span class="s2">&quot;Skill&quot;</span><span class="p">,</span> <span class="n">skill</span><span class="p">),</span>
                     <span class="p">],</span>

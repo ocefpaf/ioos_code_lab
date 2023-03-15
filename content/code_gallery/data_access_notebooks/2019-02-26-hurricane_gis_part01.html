@@ -674,9 +674,7 @@ and load all the information we will use into two
 
     <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s2">&quot;CPL_ZIP_ENCODING&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;UTF-8&quot;</span>
 
-    <span class="n">radii</span> <span class="o">=</span> <span class="n">geopandas</span><span class="o">.</span><span class="n">read_file</span><span class="p">(</span>
-        <span class="sa">f</span><span class="s2">&quot;zip://</span><span class="si">{</span><span class="n">fname</span><span class="si">}</span><span class="s2">/</span><span class="si">{</span><span class="n">code</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span><span class="si">}{</span><span class="n">year</span><span class="si">}</span><span class="s2">_radii.shp&quot;</span>
-    <span class="p">)</span>
+    <span class="n">radii</span> <span class="o">=</span> <span class="n">geopandas</span><span class="o">.</span><span class="n">read_file</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;zip://</span><span class="si">{</span><span class="n">fname</span><span class="si">}</span><span class="s2">/</span><span class="si">{</span><span class="n">code</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span><span class="si">}{</span><span class="n">year</span><span class="si">}</span><span class="s2">_radii.shp&quot;</span><span class="p">)</span>
 
     <span class="n">pts</span> <span class="o">=</span> <span class="n">geopandas</span><span class="o">.</span><span class="n">read_file</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;zip://</span><span class="si">{</span><span class="n">fname</span><span class="si">}</span><span class="s2">/</span><span class="si">{</span><span class="n">code</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span><span class="si">}{</span><span class="n">year</span><span class="si">}</span><span class="s2">_pts.shp&quot;</span><span class="p">)</span>
 
@@ -883,7 +881,10 @@ repeated over the data length.)</p>
 <span class="n">sensor_id</span> <span class="o">=</span> <span class="n">extract_metadata</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;sensor_id&quot;</span><span class="p">])</span>
 
 <span class="n">df</span><span class="p">[</span><span class="n">col</span><span class="p">]</span><span class="o">.</span><span class="n">hvplot</span><span class="o">.</span><span class="n">line</span><span class="p">(</span>
-    <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">9</span><span class="p">,</span> <span class="mf">2.75</span><span class="p">),</span> <span class="n">legend</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">grid</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="n">sensor_id</span><span class="p">,</span>
+    <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">9</span><span class="p">,</span> <span class="mf">2.75</span><span class="p">),</span>
+    <span class="n">legend</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+    <span class="n">grid</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+    <span class="n">title</span><span class="o">=</span><span class="n">sensor_id</span><span class="p">,</span>
 <span class="p">)</span>
 </pre></div>
 </div>
