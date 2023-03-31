@@ -19,12 +19,12 @@
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
-<link href="../_static/styles/bootstrap.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+  <link href="../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
 
   
-  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
   <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
@@ -38,8 +38,8 @@
     <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=12da95d707ffb74b382d" />
-<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=12da95d707ffb74b382d" />
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
 
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
@@ -543,6 +543,9 @@ you should probably go get a coffee.</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conda<span class="w"> </span>activate<span class="w"> </span>IOOS
 </pre></div>
 </div>
+<p>Now you can start hacking the notebook with <code class="docutils literal notranslate"><span class="pre">jupyter</span> <span class="pre">nbclassic</span></code>,
+for the old style notebooks,
+or <code class="docutils literal notranslate"><span class="pre">jupyter-lab</span></code> for the new IDE interface.</p>
 </section>
 <section id="exiting-the-ioos-environment">
 <h2>Exiting the IOOS environment<a class="headerlink" href="#exiting-the-ioos-environment" title="Permalink to this headline">#</a></h2>
@@ -591,6 +594,8 @@ Check out <a class="reference external" href="http://technicaldiscovery.blogspot
 <h2>Appendix:<a class="headerlink" href="#appendix" title="Permalink to this headline">#</a></h2>
 <section id="what-to-do-when-everything-seems-to-be-broken">
 <h3>What to do when everything seems to be broken?<a class="headerlink" href="#what-to-do-when-everything-seems-to-be-broken" title="Permalink to this headline">#</a></h3>
+<p>For example, if you are seeing kernel errors like the one below.</p>
+<p><img alt="kernel_error" src="../_images/kernel_error.png" /></p>
 <ol class="arabic simple">
 <li><p>If you believe that only your environment is broken you can follow the <span class="xref myst">update environment</span> instructions from above;</p></li>
 <li><p>Sometimes conda updates can break backwards compatibility and updating is broken. In those cases remove the Miniforge3 directory and perform a fresh install of the new version.</p></li>
@@ -625,7 +630,7 @@ and ensuring that the same packages from the time you locked will be used.</p>
 <ol class="arabic simple">
 <li><p>If you did not install Miniforge on your C:\ drive you may have a “long path error.” Usually that happens when you see failures in the environment creation;</p></li>
 <li><p>Installation is “successful” but nothing was installed. Please see <a class="github reference external" href="https://github.com/ContinuumIO/anaconda-issues/issues/6258">ContinuumIO/anaconda-issues#6258</a> for some reasons to why that us happening. Most common ones are aggressive anti-virus or bank apps blocking the installation;</p></li>
-<li><p>Installation was successful but calling <code class="docutils literal notranslate"><span class="pre">jupyter</span> <span class="pre">notebook</span></code> just hangs while “waiting for localhost:” that is probably a firewall setting blocking the notebook or you need to update your packages. See <span class="xref myst">update environment</span>.</p></li>
+<li><p>Installation was successful but calling <code class="docutils literal notranslate"><span class="pre">jupyter</span> <span class="pre">nbclassic</span></code> just hangs while “waiting for localhost:” that is probably a firewall setting blocking the notebook or you need to update your packages. See <span class="xref myst">update environment</span>.</p></li>
 </ol>
 </section>
 </section>
@@ -657,7 +662,10 @@ and ensuring that the same packages from the time you locked will be used.</p>
               
               
                 <footer class="bd-footer-article">
-                  <!-- Previous / next buttons -->
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
        href="intro.html"
@@ -677,7 +685,10 @@ and ensuring that the same packages from the time you locked will be used.</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
+</div></div>
+  
 </div>
+
                 </footer>
               
             </div>
@@ -717,7 +728,7 @@ and ensuring that the same packages from the time you locked will be used.</p>
             
           </div>
           <footer class="bd-footer-content">
-            <div class="bd-footer-content__inner">
+            
 <div class="bd-footer-content__inner container">
   
   <div class="footer-item">
@@ -743,7 +754,7 @@ By IOOS
 </div>
   </div>
   
-</div></div>
+</div>
           </footer>
         
 
@@ -752,8 +763,8 @@ By IOOS
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../_static/scripts/bootstrap.js?digest=12da95d707ffb74b382d"></script>
-<script src="../_static/scripts/pydata-sphinx-theme.js?digest=12da95d707ffb74b382d"></script>
+  <script src="../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
 
   <footer class="bd-footer">
   </footer>
