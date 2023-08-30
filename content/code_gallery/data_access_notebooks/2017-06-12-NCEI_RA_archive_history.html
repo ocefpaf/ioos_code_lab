@@ -552,8 +552,10 @@ document.write(`
         <span class="s2">&quot;SCCOOS&quot;</span><span class="p">:</span> <span class="s2">&quot;Southern California Coastal Ocean Observing System&quot;</span><span class="p">,</span>
         <span class="s2">&quot;SECOORA&quot;</span><span class="p">:</span> <span class="s2">&quot;Southeast Coastal Ocean Observing Regional Association&quot;</span><span class="p">,</span>
     <span class="p">}</span>
-    <span class="n">reg_assoc</span> <span class="o">=</span> <span class="p">(</span>
-        <span class="sa">f</span><span class="s1">&#39;(dataThemeinstitutions_s:&quot;</span><span class="si">{</span><span class="n">RAs</span><span class="p">[</span><span class="n">ra</span><span class="p">]</span><span class="si">}</span><span class="s1">&quot; dataThemeprojects_s:&quot;</span><span class="si">{</span><span class="n">RAs</span><span class="p">[</span><span class="n">ra</span><span class="p">]</span><span class="si">}</span><span class="s1"> (</span><span class="si">{</span><span class="n">ra</span><span class="si">}</span><span class="s1">)&quot;)&#39;</span>
+    <span class="n">reg_assoc</span> <span class="o">=</span> <span class="s1">&#39;(dataThemeinstitutions_s:&quot;</span><span class="si">{}</span><span class="s1">&quot; dataThemeprojects_s:&quot;</span><span class="si">{}</span><span class="s1"> (</span><span class="si">{}</span><span class="s1">)&quot;)&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
+        <span class="n">RAs</span><span class="p">[</span><span class="n">ra</span><span class="p">],</span>
+        <span class="n">RAs</span><span class="p">[</span><span class="n">ra</span><span class="p">],</span>
+        <span class="n">ra</span><span class="p">,</span>
     <span class="p">)</span>
 
 <span class="c1"># Identify the project.</span>

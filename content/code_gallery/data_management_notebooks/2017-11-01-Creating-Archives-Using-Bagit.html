@@ -655,7 +655,9 @@ root group (NETCDF4 data model, file format HDF5):
 <p>Last, but not least, we have to set bag metadata and update the existing bag with it.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">urn</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;urn:ioos:station:</span><span class="si">{</span><span class="n">naming_authority</span><span class="si">}</span><span class="s2">:</span><span class="si">{</span><span class="n">st_id</span><span class="si">}</span><span class="s2">&quot;</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">urn</span> <span class="o">=</span> <span class="s2">&quot;urn:ioos:station:</span><span class="si">{naming_authority}</span><span class="s2">:</span><span class="si">{st_id}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
+    <span class="n">naming_authority</span><span class="o">=</span><span class="n">naming_authority</span><span class="p">,</span> <span class="n">st_id</span><span class="o">=</span><span class="n">st_id</span>
+<span class="p">)</span>
 
 <span class="n">bag_meta</span> <span class="o">=</span> <span class="p">{</span>
     <span class="s2">&quot;Bag-Count&quot;</span><span class="p">:</span> <span class="s2">&quot;1 of 1&quot;</span><span class="p">,</span>

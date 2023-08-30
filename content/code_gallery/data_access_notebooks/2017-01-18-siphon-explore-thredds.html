@@ -485,15 +485,17 @@ Siphon works by parsing the catalog XML and exposing it with higher level functi
 <span class="n">catalog</span> <span class="o">=</span> <span class="n">TDSCatalog</span><span class="p">(</span><span class="s2">&quot;https://thredds.cencoos.org/thredds/catalog.xml&quot;</span><span class="p">)</span>
 
 
-<span class="n">info</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;&quot;&quot;</span>
+<span class="n">info</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;</span>
 <span class="s2">Catalog information</span>
 <span class="s2">-------------------</span>
 
-<span class="s2">Base THREDDS URL: </span><span class="si">{</span><span class="n">catalog</span><span class="o">.</span><span class="n">base_tds_url</span><span class="si">}</span>
-<span class="s2">Catalog name: </span><span class="si">{</span><span class="n">catalog</span><span class="o">.</span><span class="n">catalog_name</span><span class="si">}</span>
-<span class="s2">Catalog URL: </span><span class="si">{</span><span class="n">catalog</span><span class="o">.</span><span class="n">catalog_url</span><span class="si">}</span>
-<span class="s2">Metadata: </span><span class="si">{</span><span class="n">catalog</span><span class="o">.</span><span class="n">metadata</span><span class="si">}</span>
-<span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">Base THREDDS URL: </span><span class="si">{}</span>
+<span class="s2">Catalog name: </span><span class="si">{}</span>
+<span class="s2">Catalog URL: </span><span class="si">{}</span>
+<span class="s2">Metadata: </span><span class="si">{}</span>
+<span class="s2">&quot;&quot;&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
+    <span class="n">catalog</span><span class="o">.</span><span class="n">base_tds_url</span><span class="p">,</span> <span class="n">catalog</span><span class="o">.</span><span class="n">catalog_name</span><span class="p">,</span> <span class="n">catalog</span><span class="o">.</span><span class="n">catalog_url</span><span class="p">,</span> <span class="n">catalog</span><span class="o">.</span><span class="n">metadata</span>
+<span class="p">)</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="n">info</span><span class="p">)</span>
 </pre></div>
@@ -619,11 +621,13 @@ HF RADAR, US West Coast (GNOME Format)
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">info</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;&quot;&quot;</span>
-<span class="s2">Href: </span><span class="si">{</span><span class="n">ref</span><span class="o">.</span><span class="n">href</span><span class="si">}</span>
-<span class="s2">Name: </span><span class="si">{</span><span class="n">ref</span><span class="o">.</span><span class="n">name</span><span class="si">}</span>
-<span class="s2">Title: </span><span class="si">{</span><span class="n">ref</span><span class="o">.</span><span class="n">title</span><span class="si">}</span>
-<span class="s2">&quot;&quot;&quot;</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">info</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">Href: </span><span class="si">{}</span>
+<span class="s2">Name: </span><span class="si">{}</span>
+<span class="s2">Title: </span><span class="si">{}</span>
+<span class="s2">&quot;&quot;&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
+    <span class="n">ref</span><span class="o">.</span><span class="n">href</span><span class="p">,</span> <span class="n">ref</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="n">ref</span><span class="o">.</span><span class="n">title</span>
+<span class="p">)</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="n">info</span><span class="p">)</span>
 </pre></div>
