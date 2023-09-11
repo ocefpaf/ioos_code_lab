@@ -68,6 +68,7 @@ const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../../../_static/sphinx-thebe.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'content/code_gallery/data_management_notebooks/2020-12-08-DataToDwC';</script>
+    <link rel="canonical" href="https://ioos.github.io/ioos_code_lab/content/code_gallery/data_management_notebooks/2020-12-08-DataToDwC.html" />
     <link rel="shortcut icon" href="../../../_static/IOOS_logo.png"/>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
@@ -482,12 +483,12 @@ document.write(`
 <section id="creating-event-core-with-an-occurrence-and-extended-measurement-or-fact-extension-using-python">
 <h2>Creating event core with an occurrence and extended measurement or fact extension using Python<a class="headerlink" href="#creating-event-core-with-an-occurrence-and-extended-measurement-or-fact-extension-using-python" title="Permalink to this headline">#</a></h2>
 <p>Created: 2020-12-08</p>
-<p><em>Caution:</em> This notebook was created for the <a class="reference external" href="https://www.glos.us/code-sprint/">IOOS DMAC Code Sprint</a> Biological Data Session.
+<p><em>Caution:</em> This notebook was created for the <a class="reference external" href="https://glos.org/2019-code-sprint/">IOOS DMAC Code Sprint</a> Biological Data Session.
 The data in this notebook were created specifically as an example and meant solely to be
 illustrative of the process for aligning data to the biological data standard - <a class="reference external" href="https://dwc.tdwg.org/">Darwin Core</a>.
 These data should not be considered actual occurrences of species and any measurements
 are also contrived. This notebook is meant to provide a step by step process for taking
-original data and aligning it to Darwin Core. It has been adapted from the R markdown notebook created by Abby Benson <a class="reference external" href="https://github.com/ioos/bio_data_guide/blob/master/Standardizing%20Marine%20Biological%20Data/datasets/example_script_with_fake_data/IOOS_DMAC_DataToDwC_Notebook_event.md">IOOS_DMAC_DataToDWC_Notebook_event.md</a>.</p>
+original data and aligning it to Darwin Core. It has been adapted from the R markdown notebook created by Abby Benson <a class="reference external" href="https://github.com/ioos/bio_data_guide/blob/main/datasets/example_script_with_fake_data/IOOS_DMAC_DataToDwC_Notebook_event.md">IOOS_DMAC_DataToDWC_Notebook_event.md</a>.</p>
 <p>First let’s bring in the appropriate libraries to work with the tabular data files and generate the appropriate content for the Darwin Core requirements.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -634,7 +635,7 @@ original data and aligning it to Darwin Core. It has been adapted from the R mar
 <li><p>However, several pieces of information will be left out if we choose that option.</p></li>
 </ul>
 </li>
-<li><p><strong><a class="reference external" href="https://dwc.tdwg.org/terms/#event">sampling event</a> with <a class="reference external" href="https://dwc.tdwg.org/terms/#occurrence">occurrence</a> and <a class="reference external" href="https://tools.gbif.org/dwca-validator/extension.do?id=http://rs.iobis.org/obis/terms/ExtendedMeasurementOrFact">extended measurement or fact (eMoF)</a></strong>:</p>
+<li><p><strong><a class="reference external" href="https://dwc.tdwg.org/terms/#event">sampling event</a> with <a class="reference external" href="https://dwc.tdwg.org/terms/#occurrence">occurrence</a> and <a class="reference external" href="https://rs.gbif.org/extensions.html#http://rs.iobis.org/obis/terms/ExtendedMeasurementOrFact">extended measurement or fact (eMoF)</a></strong>:</p>
 <ul>
 <li><p>More difficult to create.</p></li>
 <li><p>composed of several files.</p></li>
@@ -864,7 +865,7 @@ is a unique identifier for each sampling event in the data.</p>
 </div>
 <section id="taxonomic-name-matching">
 <h3>Taxonomic Name Matching<a class="headerlink" href="#taxonomic-name-matching" title="Permalink to this headline">#</a></h3>
-<p>A requirement for <a class="reference external" href="https://obis.org/">OBIS</a> is that all scientific names match to the <a class="reference external" href="http://www.marinespecies.org/">World Register of
+<p>A requirement for <a class="reference external" href="https://obis.org/">OBIS</a> is that all scientific names match to the <a class="reference external" href="https://www.marinespecies.org/">World Register of
 Marine Species (WoRMS)</a> and a <code class="docutils literal notranslate"><span class="pre">scientificNameID</span></code> is included. A <code class="docutils literal notranslate"><span class="pre">scientificNameID</span></code> looks
 like this <code class="docutils literal notranslate"><span class="pre">urn:lsid:marinespecies.org:taxname:275730</span></code> with the last digits after
 the colon being the <strong>WoRMS aphia ID</strong>. We’ll need to go out to WoRMS to grab this
@@ -878,7 +879,7 @@ information. So, we create a lookup table of the unique scientific names found i
 </div>
 </div>
 </div>
-<p>Next, we add the known columns that we can grab information from <a class="reference external" href="http://www.marinespecies.org/">WoRMS</a> including the required <code class="docutils literal notranslate"><span class="pre">scientificNameID</span></code> and populate the look up table with empty values for those fields (to initialize the DataFrame for population later).</p>
+<p>Next, we add the known columns that we can grab information from <a class="reference external" href="https://www.marinespecies.org/">WoRMS</a> including the required <code class="docutils literal notranslate"><span class="pre">scientificNameID</span></code> and populate the look up table with empty values for those fields (to initialize the DataFrame for population later).</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">headers</span> <span class="o">=</span> <span class="p">[</span>
@@ -1331,8 +1332,8 @@ information. So, we create a lookup table of the unique scientific names found i
 </section>
 <section id="extended-measurement-or-fact-emof">
 <h2>Extended Measurement Or Fact (eMoF)<a class="headerlink" href="#extended-measurement-or-fact-emof" title="Permalink to this headline">#</a></h2>
-<p>The last file we need to create is the <strong>extended measurement or fact (eMoF)</strong> file. The measurement or fact includes measurements/facts about the event (temp, salinity, etc) as well as about the occurrence (percent cover, abundance, weight, length, etc). They are linked to the events using <code class="docutils literal notranslate"><span class="pre">eventID</span></code> and to the occurrences using <code class="docutils literal notranslate"><span class="pre">occurrenceID</span></code>. <a class="reference external" href="https://tools.gbif.org/dwca-validator/extension.do?id=http://rs.iobis.org/obis/terms/ExtendedMeasurementOrFact">Extended Measurements Or Facts</a> are any other generic observations that are associated with resources that are described using Darwin Core (eg. water temperature observations). See the <a class="reference external" href="https://dwc.tdwg.org/rdf/#2-implementation-guide">DwC implementation guide</a> for more information.</p>
-<p>For the various <code class="docutils literal notranslate"><span class="pre">TypeID</span></code> fields (eg. <code class="docutils literal notranslate"><span class="pre">measurementTypeID</span></code>) include URI’s from the <a class="reference external" href="https://www.bodc.ac.uk/resources/vocabularies/vocabulary_search/">BODC NERC vocabulary</a> or other <em>nearly permanent</em> source, where possible. For example, <a class="reference external" href="http://vocab.nerc.ac.uk/collection/P25/current/WTEMP/">water temperature</a> in the BODC NERC vocabulary, the URI is <code class="docutils literal notranslate"><span class="pre">http://vocab.nerc.ac.uk/collection/P25/current/WTEMP/</span></code>.</p>
+<p>The last file we need to create is the <strong>extended measurement or fact (eMoF)</strong> file. The measurement or fact includes measurements/facts about the event (temp, salinity, etc) as well as about the occurrence (percent cover, abundance, weight, length, etc). They are linked to the events using <code class="docutils literal notranslate"><span class="pre">eventID</span></code> and to the occurrences using <code class="docutils literal notranslate"><span class="pre">occurrenceID</span></code>. <a class="reference external" href="https://rs.gbif.org/extensions.html#http://rs.iobis.org/obis/terms/ExtendedMeasurementOrFact">Extended Measurements Or Facts</a> are any other generic observations that are associated with resources that are described using Darwin Core (eg. water temperature observations). See the <a class="reference external" href="https://dwc.tdwg.org/rdf/#2-implementation-guide">DwC implementation guide</a> for more information.</p>
+<p>For the various <code class="docutils literal notranslate"><span class="pre">TypeID</span></code> fields (eg. <code class="docutils literal notranslate"><span class="pre">measurementTypeID</span></code>) include URI’s from the <a class="reference external" href="https://vocab.nerc.ac.uk/search_nvs/">BODC NERC vocabulary</a> or other <em>nearly permanent</em> source, where possible. For example, <a class="reference external" href="http://vocab.nerc.ac.uk/collection/P25/current/WTEMP/">water temperature</a> in the BODC NERC vocabulary, the URI is <code class="docutils literal notranslate"><span class="pre">http://vocab.nerc.ac.uk/collection/P25/current/WTEMP/</span></code>.</p>
 <p>We then populate the appropriate fields with the information we have available. The <code class="docutils literal notranslate"><span class="pre">measurementValue</span></code> field is populated with the observed values of the measurement described in the <code class="docutils literal notranslate"><span class="pre">measurementType</span></code> and <code class="docutils literal notranslate"><span class="pre">measurementUnit</span></code> field.</p>
 <p>For measurement or facts of the <strong>occurrence</strong> (eg. percent cover, length, density, biomass, etc), we want to be sure to include the <code class="docutils literal notranslate"><span class="pre">occurrenceID</span></code> from the <strong>occurrence</strong> record as those observations are measurements of/from the organism. Other observations are tied to the <strong>event</strong> via the <code class="docutils literal notranslate"><span class="pre">eventID</span></code> (eg. water temperature, rugosity, etc).</p>
 <p>Below we walk through creating three independent DataFrames for <em>temperature</em>, <em>rugosity</em>, and <em>percent cover</em>. Populating each DataFrame with all of the information we have available and removing duplicative fields. We finally concatenate all the <strong>extended measurements or facts</strong> together into one DataFrame.</p>

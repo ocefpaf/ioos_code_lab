@@ -68,6 +68,7 @@ const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../../../_static/sphinx-thebe.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'content/code_gallery/data_access_notebooks/2017-11-30-rerddap';</script>
+    <link rel="canonical" href="https://ioos.github.io/ioos_code_lab/content/code_gallery/data_access_notebooks/2017-11-30-rerddap.html" />
     <link rel="shortcut icon" href="../../../_static/IOOS_logo.png"/>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
@@ -699,7 +700,7 @@ df &lt;- tabledap(
 </table>
 </div></div></div>
 </div>
-<p>We can navigate to ERDDAP’s <a class="reference external" href="http://gcoos4.tamu.edu:8080/erddap/info/fk_CREMP_yearly_revisited_DATA_v3_1996/index.html">info page</a> to find the variables description. Let’s check what is <code class="docutils literal notranslate"><span class="pre">organismQuantity</span></code>:</p>
+<p>We can navigate to ERDDAP’s <a class="reference external" href="https://gcoos4.tamu.edu/erddap/info/fk_CREMP_yearly_revisited_DATA_v3_1996/index.html">info page</a> to find the variables description. Let’s check what is <code class="docutils literal notranslate"><span class="pre">organismQuantity</span></code>:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">The</span> <span class="ow">is</span> <span class="n">value</span> <span class="n">of</span> <span class="n">the</span> <span class="n">derived</span> <span class="n">information</span> <span class="n">product</span><span class="p">,</span> <span class="n">such</span> <span class="k">as</span> <span class="n">the</span> <span class="n">numerical</span> <span class="n">value</span> <span class="k">for</span> <span class="n">biomass</span><span class="o">.</span> <span class="n">This</span> <span class="n">term</span> <span class="n">does</span> <span class="ow">not</span> <span class="n">include</span> <span class="n">units</span><span class="o">.</span> <span class="n">Mean</span> <span class="n">number</span> <span class="n">of</span> <span class="n">observed</span> <span class="n">fish</span> <span class="n">per</span> <span class="n">species</span> <span class="k">for</span> <span class="mi">5</span> <span class="n">Minutes</span>
 </pre></div>
 </div>
@@ -1097,7 +1098,7 @@ let’s remove that first to plot the data positions only where something was fo
 </table>
 </div></div></div>
 </div>
-<p><code class="docutils literal notranslate"><span class="pre">rerddap</span></code>’s info request does not have enough metadata about the variables to explain the blank, and most abundant, <code class="docutils literal notranslate"><span class="pre">genus</span></code>. <a class="reference external" href="http://gcoos4.tamu.edu:8080/erddap/tabledap/fk_CREMP_yearly_revisited_DATA_v3_1996.html">Checking the sever</a> did not help figure that out. We’ll remove that for now to deal with only those that are identified.</p>
+<p><code class="docutils literal notranslate"><span class="pre">rerddap</span></code>’s info request does not have enough metadata about the variables to explain the blank, and most abundant, <code class="docutils literal notranslate"><span class="pre">genus</span></code>. <a class="reference external" href="https://gcoos4.tamu.edu/erddap/tabledap/fk_CREMP_yearly_revisited_DATA_v3_1996.html">Checking the sever</a> did not help figure that out. We’ll remove that for now to deal with only those that are identified.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cremp_1996</span> <span class="o">=</span> <span class="n">cremp_1996</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">cremp_1996</span><span class="p">[</span><span class="s2">&quot;genus&quot;</span><span class="p">]</span> <span class="o">!=</span> <span class="s2">&quot;&quot;</span><span class="p">]</span>

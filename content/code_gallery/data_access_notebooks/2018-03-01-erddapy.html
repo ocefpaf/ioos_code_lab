@@ -68,6 +68,7 @@ const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../../../_static/sphinx-thebe.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'content/code_gallery/data_access_notebooks/2018-03-01-erddapy';</script>
+    <link rel="canonical" href="https://ioos.github.io/ioos_code_lab/content/code_gallery/data_access_notebooks/2018-03-01-erddapy.html" />
     <link rel="shortcut icon" href="../../../_static/IOOS_logo.png"/>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
@@ -468,10 +469,10 @@ document.write(`
 <p>ERDDAP has RESTful API that is very convenient for creating web apps, data portals, etc. However, writing those URLs manually can be tedious and error prone</p>
 <p>This notebook walks through an easy to set up ERDDAP RESTful URL by using the python client, <code class="docutils literal notranslate"><span class="pre">erddapy</span></code>.</p>
 <p>A typical ERDDAP RESTful URL looks like:</p>
-<p><a class="reference external" href="https://data.ioos.us/gliders/erddap/tabledap/whoi_406-20160902T1700.mat?depth,latitude,longitude,salinity,temperature,time&amp;time%3E=2016-07-10T00:00:00Z&amp;time%3C=2017-02-10T00:00:00Z&amp;latitude%3E=38.0&amp;latitude%3C=41.0&amp;longitude%3E=-72.0&amp;longitude%3C=-69.0">https://data.ioos.us/gliders/erddap/tabledap/whoi_406-20160902T1700.mat?depth,latitude,longitude,salinity,temperature,time&amp;time&gt;=2016-07-10T00:00:00Z&amp;time&lt;=2017-02-10T00:00:00Z &amp;latitude&gt;=38.0&amp;latitude&lt;=41.0&amp;longitude&gt;=-72.0&amp;longitude&lt;=-69.0</a></p>
+<p><a class="reference external" href="https://gliders.ioos.us/erddap/tabledap/whoi_406-20160902T1700.mat?depth,latitude,longitude,salinity,temperature,time&amp;time%3E=2016-07-10T00:00:00Z&amp;time%3C=2017-02-10T00:00:00Z&amp;latitude%3E=38.0&amp;latitude%3C=41.0&amp;longitude%3E=-72.0&amp;longitude%3C=-69.0">https://gliders.ioos.us/gliders/erddap/tabledap/whoi_406-20160902T1700.mat?depth,latitude,longitude,salinity,temperature,time&amp;time&gt;=2016-07-10T00:00:00Z&amp;time&lt;=2017-02-10T00:00:00Z &amp;latitude&gt;=38.0&amp;latitude&lt;=41.0&amp;longitude&gt;=-72.0&amp;longitude&lt;=-69.0</a></p>
 <p>Let’s break it down to smaller parts:</p>
 <ul class="simple">
-<li><p><strong>server</strong>: <a class="reference external" href="https://data.ioos.us/gliders/erddap/">https://data.ioos.us/gliders/erddap/</a></p></li>
+<li><p><strong>server</strong>: <a class="reference external" href="https://gliders.ioos.us/erddap/index.html">https://gliders.ioos.us/erddap/index.html</a></p></li>
 <li><p><strong>protocol</strong>: tabledap</p></li>
 <li><p><strong>dataset_id</strong>: whoi_406-20160902T1700</p></li>
 <li><p><strong>response</strong>: .mat</p></li>
@@ -1115,7 +1116,7 @@ Attributes: (12/14)
 <img alt="../../../_images/af684debde9bc12141f0faddc10708e9555e4dba9f554565340fc590857d9b5a.png" src="../../../_images/af684debde9bc12141f0faddc10708e9555e4dba9f554565340fc590857d9b5a.png" />
 </div>
 </div>
-<p>One can build the proper variables programmatically, feed them in erddapy, and then build a service like <a class="reference external" href="https://mybinder.org/v2/gh/ioos/BioData-Training-Workshop/master?filepath=notebooks/ERDDAP_timeseries_explorer-IOOS.ipynb">this notebook</a>. However, erddapy is also designed for interactive work. One can explore interactively the ERDDAP server from Python.</p>
+<p>One can build the proper variables programmatically, feed them in erddapy, and then build a service like <a class="reference external" href="https://github.com/ioos/BioData-Training-Workshop/blob/master/notebooks/ERDDAP_timeseries_explorer-IOOS.ipynb">this notebook</a>. However, erddapy is also designed for interactive work. One can explore interactively the ERDDAP server from Python.</p>
 <p>PS: Note that in this example below we did not feed any variables other than the server URL</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">

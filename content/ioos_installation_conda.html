@@ -68,6 +68,7 @@ const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'content/ioos_installation_conda';</script>
+    <link rel="canonical" href="https://ioos.github.io/ioos_code_lab/content/ioos_installation_conda.html" />
     <link rel="shortcut icon" href="../_static/IOOS_logo.png"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -563,9 +564,9 @@ Check out <a class="reference external" href="https://technicaldiscovery.blogspo
 <p>For example, if you are seeing kernel errors like the one below.</p>
 <p><img alt="kernel_error" src="../_images/kernel_error.png" /></p>
 <ol class="arabic simple">
-<li><p>If you believe that only your environment is broken you can follow the <span class="xref myst">update environment</span> instructions from above;</p></li>
+<li><p>If you believe that only your environment is broken you can follow the <a class="reference internal" href="#updating-the-ioos-environment"><span class="std std-doc">update environment</span></a> instructions from above;</p></li>
 <li><p>Sometimes conda updates can break backwards compatibility and updating is broken. In those cases remove the Miniforge3 directory and perform a fresh install of the new version.</p></li>
-<li><p>In rare cases you may want to install a frozen version of the environment. Like, you need the exact same version that is running on our CIs. You can accomplish that by <a class="reference external" href="https://github.com/ioos/ioos_code_lab/raw/main/.binder/conda-lock.yml">downloading the lock file</a> and issuing the command:</p></li>
+<li><p>In rare cases you may want to install a frozen version of the environment. Like, you need the exact same version that is running on our CIs. You can accomplish that by <a class="reference external" href="https://raw.githubusercontent.com/ioos/ioos_code_lab/main/.binder/conda-lock.yml">downloading the lock file</a> and issuing the command:</p></li>
 </ol>
 <div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>conda<span class="w"> </span>create<span class="w"> </span>--name<span class="w"> </span>IOOS<span class="w"> </span>--file<span class="w"> </span>.binder/conda-lock.yml
 </pre></div>
@@ -595,7 +596,7 @@ and ensuring that the same packages from the time you locked will be used.</p>
 <ol class="arabic simple">
 <li><p>If you did not install Miniforge on your C:\ drive you may have a “long path error.” Usually that happens when you see failures in the environment creation;</p></li>
 <li><p>Installation is “successful” but nothing was installed. Please see <a class="github reference external" href="https://github.com/ContinuumIO/anaconda-issues/issues/6258">ContinuumIO/anaconda-issues#6258</a> for some reasons to why that us happening. Most common ones are aggressive anti-virus or bank apps blocking the installation;</p></li>
-<li><p>Installation was successful but calling <code class="docutils literal notranslate"><span class="pre">jupyter</span> <span class="pre">nbclassic</span></code> just hangs while “waiting for localhost:” that is probably a firewall setting blocking the notebook or you need to update your packages. See <span class="xref myst">update environment</span>.</p></li>
+<li><p>Installation was successful but calling <code class="docutils literal notranslate"><span class="pre">jupyter</span> <span class="pre">nbclassic</span></code> just hangs while “waiting for localhost:” that is probably a firewall setting blocking the notebook or you need to update your packages. See <a class="reference internal" href="#updating-the-ioos-environment"><span class="std std-doc">update environment</span></a>.</p></li>
 </ol>
 </section>
 </section>

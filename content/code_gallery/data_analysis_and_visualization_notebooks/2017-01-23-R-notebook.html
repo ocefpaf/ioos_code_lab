@@ -70,6 +70,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'content/code_gallery/data_analysis_and_visualization_notebooks/2017-01-23-R-notebook';</script>
+    <link rel="canonical" href="https://ioos.github.io/ioos_code_lab/content/code_gallery/data_analysis_and_visualization_notebooks/2017-01-23-R-notebook.html" />
     <link rel="shortcut icon" href="../../../_static/IOOS_logo.png"/>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
@@ -467,14 +468,14 @@ document.write(`
 <h1>Quick demonstration of R-notebooks using the r-oce library<a class="headerlink" href="#quick-demonstration-of-r-notebooks-using-the-r-oce-library" title="Permalink to this headline">#</a></h1>
 <p>Created: 2017-01-23</p>
 <p>The IOOS notebook
-<a class="reference external" href="https://github.com/ioos/notebooks_demos/blob/229dabe0e7dd207814b9cfb96e024d3138f19abf/environment.yml#L73-L76">environment</a>
+<a class="reference external" href="https://ioos.github.io/ioos_code_lab/content/ioos_installation_conda.html">environment</a>
 installs the <code class="docutils literal notranslate"><span class="pre">R</span></code> language and the <code class="docutils literal notranslate"><span class="pre">Jupyter</span></code> kernel needed to run <code class="docutils literal notranslate"><span class="pre">R</span></code> notebooks.
 Conda can also install extra <code class="docutils literal notranslate"><span class="pre">R</span></code> packages,
 and those packages that are unavailable in <code class="docutils literal notranslate"><span class="pre">conda</span></code> can be installed directly from CRAN with <code class="docutils literal notranslate"><span class="pre">install.packages(pkg_name)</span></code>.</p>
 <p>You can start <code class="docutils literal notranslate"><span class="pre">jupyter</span></code> from any other environment and change the kernel later using the drop-down menu.
 (Check the <code class="docutils literal notranslate"><span class="pre">R</span></code> logo at the top right to ensure you are in the <code class="docutils literal notranslate"><span class="pre">R</span></code> jupyter kernel.)</p>
-<p>In this simple example we will use two libraries aimed at the oceanography community written in <code class="docutils literal notranslate"><span class="pre">R</span></code>: <a class="reference external" href="https://cran.r-project.org/web/packages/gsw/index.html"><code class="docutils literal notranslate"><span class="pre">r-gsw</span></code></a> and <a class="reference external" href="http://dankelley.github.io/oce/"><code class="docutils literal notranslate"><span class="pre">r-oce</span></code></a>.</p>
-<p>(The original post for the examples below can be found author’s blog: <a class="reference external" href="http://dankelley.github.io/blog/">http://dankelley.github.io/blog/</a>)</p>
+<p>In this simple example we will use two libraries aimed at the oceanography community written in <code class="docutils literal notranslate"><span class="pre">R</span></code>: <a class="reference external" href="https://cran.r-project.org/web/packages/gsw/index.html"><code class="docutils literal notranslate"><span class="pre">r-gsw</span></code></a> and <a class="reference external" href="https://dankelley.github.io/oce/"><code class="docutils literal notranslate"><span class="pre">r-oce</span></code></a>.</p>
+<p>(The original post for the examples below can be found author’s blog: <a class="reference external" href="https://dankelley.github.io/blog/">https://dankelley.github.io/blog/</a>)</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">library</span><span class="p">(</span><span class="n">gsw</span><span class="p">)</span>

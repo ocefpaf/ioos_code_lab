@@ -68,6 +68,7 @@ const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../../../_static/sphinx-thebe.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'content/code_gallery/data_analysis_and_visualization_notebooks/2016-11-16-CF-UGRID-SGRID-conventions';</script>
+    <link rel="canonical" href="https://ioos.github.io/ioos_code_lab/content/code_gallery/data_analysis_and_visualization_notebooks/2016-11-16-CF-UGRID-SGRID-conventions.html" />
     <link rel="shortcut icon" href="../../../_static/IOOS_logo.png"/>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
@@ -479,13 +480,13 @@ document.write(`
 <p>Updated: 2022-05-25</p>
 <p>Metadata conventions, like the Climate and Forecast (CF) conventions,
 can be cumbersome to adhere to but it will be very handy when you or other users manipulate the data later in time.</p>
-<p>In this notebook we will explore three Python modules that parse <a class="reference external" href="http://cfconventions.org/cf-conventions/v1.6.0/cf-conventions.html"><code class="docutils literal notranslate"><span class="pre">CF-1.6</span></code></a>,
-<a class="reference external" href="http://ugrid-conventions.github.io/ugrid-conventions/"><code class="docutils literal notranslate"><span class="pre">UGRID-1.0</span></code></a>,
-and <a class="reference external" href="http://sgrid.github.io/sgrid/"><code class="docutils literal notranslate"><span class="pre">SGRID-0.3</span></code></a></p>
+<p>In this notebook we will explore three Python modules that parse <a class="reference external" href="https://cfconventions.org/cf-conventions/v1.6.0/cf-conventions.html"><code class="docutils literal notranslate"><span class="pre">CF-1.6</span></code></a>,
+<a class="reference external" href="https://ugrid-conventions.github.io/ugrid-conventions/"><code class="docutils literal notranslate"><span class="pre">UGRID-1.0</span></code></a>,
+and <a class="reference external" href="https://sgrid.github.io/sgrid/"><code class="docutils literal notranslate"><span class="pre">SGRID-0.3</span></code></a></p>
 <section id="cf-1-6-with-cf-xarray">
 <h2>CF-1.6 with cf_xarray<a class="headerlink" href="#cf-1-6-with-cf-xarray" title="Permalink to this headline">#</a></h2>
 <p>There are many Python libraries to read and write CF metadata,
-including <a class="reference external" href="http://scitools.org.uk/iris/"><code class="docutils literal notranslate"><span class="pre">iris</span></code></a> and <a class="reference external" href="https://cf-xarray.readthedocs.io/"><code class="docutils literal notranslate"><span class="pre">cf_xarray</span></code></a>.</p>
+including <a class="reference external" href="https://scitools-iris.readthedocs.io/en/stable/"><code class="docutils literal notranslate"><span class="pre">iris</span></code></a> and <a class="reference external" href="https://cf-xarray.readthedocs.io/en/latest/"><code class="docutils literal notranslate"><span class="pre">cf_xarray</span></code></a>.</p>
 <p>We will explore <code class="docutils literal notranslate"><span class="pre">cf_xarray</span></code> in this notebook because it is built on top of the popular <code class="docutils literal notranslate"><span class="pre">xarray</span></code> package.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1060,7 +1061,7 @@ Attributes:
 <section id="ugrid-1-0-with-pyugrid">
 <h2>UGRID-1.0 with pyugrid<a class="headerlink" href="#ugrid-1-0-with-pyugrid" title="Permalink to this headline">#</a></h2>
 <p>The Unstructured Grids convention encompasses any type of grid topology,
-and the details of the convention are documented in <a class="reference external" href="http://bit.ly/2gvtmqQ">https://ugrid-conventions.github.io/ugrid-conventions</a>.
+and the details of the convention are documented in <a class="reference external" href="https://ugrid-conventions.github.io/ugrid-conventions/">https://ugrid-conventions.github.io/ugrid-conventions</a>.
 Right now <code class="docutils literal notranslate"><span class="pre">pyugrid</span></code> supports only triangular topologies, more will be added in the near future.</p>
 <p>In a nutshell the <code class="docutils literal notranslate"><span class="pre">pyugrid</span></code> parses and exposes the underlying grid topology in a python object.</p>
 <div class="cell docutils container">
@@ -1121,7 +1122,7 @@ if the data is <code class="docutils literal notranslate"><span class="pre">UGRI
 <img alt="../../../_images/5d100526b7338936d6dd321fd5cb7030d85b7363ee8bd2b4b7458b29e08f26ba.png" src="../../../_images/5d100526b7338936d6dd321fd5cb7030d85b7363ee8bd2b4b7458b29e08f26ba.png" />
 </div>
 </div>
-<p>Check a longer <code class="docutils literal notranslate"><span class="pre">pyugrid</span></code> example <a class="reference external" href="http://bit.ly/2gaZLCy">here</a>.</p>
+<p>Check a longer <code class="docutils literal notranslate"><span class="pre">pyugrid</span></code> example <a class="reference external" href="https://ocefpaf.github.io/python4oceanographers/blog/2015/07/20/pyugrid/">here</a>.</p>
 </section>
 <section id="sgrid-0-3-with-pysgrid">
 <h2>SGRID-0.3 with <code class="docutils literal notranslate"><span class="pre">pysgrid</span></code><a class="headerlink" href="#sgrid-0-3-with-pysgrid" title="Permalink to this headline">#</a></h2>
@@ -1344,7 +1345,7 @@ There is plenty of room to create convenience methods using the low level access
 <img alt="../../../_images/e4dbb611000621a119839532f6cb8db87b008c275d51a24dbaf77d9b56ba4740.png" src="../../../_images/e4dbb611000621a119839532f6cb8db87b008c275d51a24dbaf77d9b56ba4740.png" />
 </div>
 </div>
-<p>For more examples on <code class="docutils literal notranslate"><span class="pre">pysgrid</span></code> check this <a class="reference external" href="http://bit.ly/2fKVk0x">post</a> out.</p>
+<p>For more examples on <code class="docutils literal notranslate"><span class="pre">pysgrid</span></code> check this <a class="reference external" href="https://ocefpaf.github.io/python4oceanographers/blog/2015/12/07/pysgrid/">post</a> out.</p>
 </section>
 </section>
 

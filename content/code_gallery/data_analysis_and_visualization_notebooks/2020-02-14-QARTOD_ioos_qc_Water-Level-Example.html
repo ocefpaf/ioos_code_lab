@@ -70,6 +70,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'content/code_gallery/data_analysis_and_visualization_notebooks/2020-02-14-QARTOD_ioos_qc_Water-Level-Example';</script>
+    <link rel="canonical" href="https://ioos.github.io/ioos_code_lab/content/code_gallery/data_analysis_and_visualization_notebooks/2020-02-14-QARTOD_ioos_qc_Water-Level-Example.html" />
     <link rel="shortcut icon" href="../../../_static/IOOS_logo.png"/>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
@@ -493,7 +494,7 @@ document.write(`
 </div>
 </div>
 <p>Now we are ready to load the data, run tests and plot results!</p>
-<p>We will get the data from the <a class="reference external" href="http://erddap.aoos.org/erddap/">AOOS ERDDAP server</a>.</p>
+<p>We will get the data from the <a class="reference external" href="https://erddap.aoos.org/erddap/index.html">AOOS ERDDAP server</a>.</p>
 <!-- Note that the data may change in the future. For reproducibility's sake we will save the data downloaded into a CSV file. --><div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">cf_xarray</span>
@@ -501,7 +502,7 @@ document.write(`
 <span class="nb">print</span><span class="p">(</span><span class="n">cf_xarray</span><span class="o">.</span><span class="n">__version__</span><span class="p">)</span>
 <span class="kn">from</span> <span class="nn">erddapy</span> <span class="kn">import</span> <span class="n">ERDDAP</span>
 
-<span class="n">e</span> <span class="o">=</span> <span class="n">ERDDAP</span><span class="p">(</span><span class="n">server</span><span class="o">=</span><span class="s2">&quot;http://erddap.aoos.org/erddap/&quot;</span><span class="p">,</span> <span class="n">protocol</span><span class="o">=</span><span class="s2">&quot;tabledap&quot;</span><span class="p">)</span>
+<span class="n">e</span> <span class="o">=</span> <span class="n">ERDDAP</span><span class="p">(</span><span class="n">server</span><span class="o">=</span><span class="s2">&quot;https://erddap.aoos.org/erddap/&quot;</span><span class="p">,</span> <span class="n">protocol</span><span class="o">=</span><span class="s2">&quot;tabledap&quot;</span><span class="p">)</span>
 <span class="n">e</span><span class="o">.</span><span class="n">dataset_id</span> <span class="o">=</span> <span class="s2">&quot;kotzebue-alaska-water-level&quot;</span>
 <span class="n">e</span><span class="o">.</span><span class="n">constraints</span> <span class="o">=</span> <span class="p">{</span>
     <span class="s2">&quot;time&gt;=&quot;</span><span class="p">:</span> <span class="s2">&quot;2018-09-05T21:00:00Z&quot;</span><span class="p">,</span>
@@ -515,36 +516,44 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>- CF Roles:   timeseries_id: [&#39;station&#39;]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.8.4
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Discrete Sampling Geometry:
+            CF Roles:   timeseries_id: [&#39;station&#39;]
 
 Coordinates:
-- CF Axes:   X: [&#39;longitude&#39;]
-             Y: [&#39;latitude&#39;]
-             T: [&#39;time&#39;]
-             Z: n/a
+             CF Axes:   X: [&#39;longitude&#39;]
+                        Y: [&#39;latitude&#39;]
+                        T: [&#39;time&#39;]
+                        Z: n/a
 
-- CF Coordinates:   longitude: [&#39;longitude&#39;]
-                    latitude: [&#39;latitude&#39;]
-                    time: [&#39;time&#39;]
-                    vertical: n/a
+      CF Coordinates:   longitude: [&#39;longitude&#39;]
+                        latitude: [&#39;latitude&#39;]
+                        time: [&#39;time&#39;]
+                        vertical: n/a
 
-- Cell Measures:   area, volume: n/a
+       Cell Measures:   area, volume: n/a
 
-- Standard Names:   latitude: [&#39;latitude&#39;]
-                    longitude: [&#39;longitude&#39;]
-                    time: [&#39;time&#39;]
+      Standard Names:   latitude: [&#39;latitude&#39;]
+                        longitude: [&#39;longitude&#39;]
+                        time: [&#39;time&#39;]
 
-- Bounds:   n/a
+              Bounds:   n/a
+
+       Grid Mappings:   n/a
 
 Data Variables:
-- Cell Measures:   area, volume: n/a
+       Cell Measures:   area, volume: n/a
 
-- Standard Names:   aggregate_quality_flag: [&#39;sea_surface_height_above_sea_level_geoid_mhhw_qc_agg&#39;]
-                    altitude: [&#39;z&#39;]
-                    sea_surface_height_above_sea_level: [&#39;sea_surface_height_above_sea_level_geoid_mhhw&#39;]
-                    sea_surface_height_above_sea_level quality_flag: [&#39;sea_surface_height_above_sea_level_geoid_mhhw_qc_tests&#39;]
+      Standard Names:   aggregate_quality_flag: [&#39;sea_surface_height_above_sea_level_geoid_mhhw_qc_agg&#39;]
+                        altitude: [&#39;z&#39;]
+                        sea_surface_height_above_sea_level: [&#39;sea_surface_height_above_sea_level_geoid_mhhw&#39;]
+                        sea_surface_height_above_sea_level quality_flag: [&#39;sea_surface_height_above_sea_level_geoid_mhhw_qc_tests&#39;]
 
-- Bounds:   n/a
+              Bounds:   n/a
+
+       Grid Mappings:   n/a
 </pre></div>
 </div>
 </div>
@@ -568,18 +577,13 @@ Data Variables:
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>OrderedDict([(&#39;qartod&#39;,
-              OrderedDict([(&#39;gross_range_test&#39;,
-                            masked_array(data=[1, 1, 1, ..., 1, 1, 1],
-                                         mask=False,
-                                   fill_value=999999,
-                                        dtype=uint8)),
-                           (&#39;flat_line_test&#39;, array([1, 1, 1, ..., 1, 1, 1])),
-                           (&#39;spike_test&#39;,
-                            masked_array(data=[2, 1, 1, ..., 1, 1, 2],
-                                         mask=False,
-                                   fill_value=999999,
-                                        dtype=uint8))]))])
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>defaultdict(collections.OrderedDict,
+            {&#39;qartod&#39;: OrderedDict([(&#39;gross_range_test&#39;,
+                           array([1, 1, 1, ..., 1, 1, 1], dtype=uint8)),
+                          (&#39;flat_line_test&#39;,
+                           array([1, 1, 1, ..., 1, 1, 1], dtype=uint8)),
+                          (&#39;spike_test&#39;,
+                           array([2, 1, 1, ..., 1, 1, 2], dtype=uint8))])})
 </pre></div>
 </div>
 </div>
@@ -654,7 +658,7 @@ Data Variables:
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../../_images/92100a5d817d2925b89e3b513414245bf2faac7f3583f3702dc139b51efcc2f9.png" src="../../../_images/92100a5d817d2925b89e3b513414245bf2faac7f3583f3702dc139b51efcc2f9.png" />
+<img alt="../../../_images/75bbda9e987d6754bafd329f1120afa06eef0e585d17ce21a84963ccf4a6af19.png" src="../../../_images/75bbda9e987d6754bafd329f1120afa06eef0e585d17ce21a84963ccf4a6af19.png" />
 </div>
 </div>
 <p>An actual spike test, based on a data increase threshold, flags similar spikes to the gross range test but also indetifies other suspect unusual increases in the series.</p>
@@ -671,7 +675,7 @@ Data Variables:
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../../_images/eeee53b988626154ba2f9346985a0a76fe791258ab52c4df415c848cb32911b7.png" src="../../../_images/eeee53b988626154ba2f9346985a0a76fe791258ab52c4df415c848cb32911b7.png" />
+<img alt="../../../_images/4c627e7189a06cb3130ae697afc17e0029df6ff8fa9f6d21ad2ab766337e99c2.png" src="../../../_images/4c627e7189a06cb3130ae697afc17e0029df6ff8fa9f6d21ad2ab766337e99c2.png" />
 </div>
 </div>
 <p>The flat line test identifies issues with the data where values are “stuck.”</p>
@@ -689,7 +693,7 @@ Data Variables:
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../../_images/42bce1eb909d286496860fbf691469d4562969dd3cbdb6ed988a1c97c8d8e44b.png" src="../../../_images/42bce1eb909d286496860fbf691469d4562969dd3cbdb6ed988a1c97c8d8e44b.png" />
+<img alt="../../../_images/d6b2dc78b8a6a81d070bacfaf6ea99c7531482bd6cfd4b1a2be8c10c06b43270.png" src="../../../_images/d6b2dc78b8a6a81d070bacfaf6ea99c7531482bd6cfd4b1a2be8c10c06b43270.png" />
 </div>
 </div>
 <p>This notebook was adapted from Jessica Austin and Kyle Wilcox’s <a class="reference external" href="https://github.com/ioos/ioos_qc/blob/b34b3762d659362fb3af11f52d8905d18cd6ec7b/docs/source/examples/QartodTestExample_WaterLevel.ipynb">original ioos_qc examples</a>. Please <a class="reference external" href="https://ioos.github.io/ioos_qc/">see the <code class="docutils literal notranslate"><span class="pre">ioos_qc</span></code> documentation</a> for more examples.</p>
