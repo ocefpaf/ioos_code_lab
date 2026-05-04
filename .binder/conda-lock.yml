@@ -13,10 +13,10 @@
 version: 1
 metadata:
   content_hash:
-    linux-64: 4130181815fc314af84e42caeee9271111bb1ebe8f1171890bffedea55f13dd7
-    osx-64: 7df193cea9229a4b63d1d0d84a8b13e5da77466328fcdcc0d480c5b31e5803b7
-    win-64: 71ef15b5d182f4d5a76754565829dca88abfbc2f75f0ae15db6bc1ed072e807d
-    osx-arm64: 5715ec4ca3310c117da75450ebec5f520baa7ff3f99672289a15fa8c397bc30b
+    linux-64: a3c64ca3bca2e58a3dd002a9c04adb091d85b45dffb14b272cc53d886619ef8a
+    osx-64: 95bbc5358fca2b2c00c99726bb9cadaebfcef5c0a8fbf7483236331bcd924a55
+    win-64: ab6ab70de5a34d8c169d6c40cc7ec138408ef16e3ae2e81c1dffb86a4ce8ccbe
+    osx-arm64: bc5019997bd132004a6c50357fbff68ca5a4369f912cc869934019f0f2e17bb0
   channels:
   - url: conda-forge
     used_env_vars: []
@@ -17162,7 +17162,7 @@ package:
   category: main
   optional: false
 - name: pocean-core
-  version: 3.2.1
+  version: 3.3.0
   manager: conda
   platform: linux-64
   dependencies:
@@ -17170,19 +17170,19 @@ package:
     netcdf4: ''
     numpy: '>=1.20'
     pandas: '>=1.0.5'
-    python: '>=3.9'
+    python: ''
     python-dateutil: ''
     pytz: ''
     shapely: '>=1.8'
     simplejson: ''
-  url: https://conda.anaconda.org/conda-forge/noarch/pocean-core-3.2.1-pyhd8ed1ab_0.conda
+  url: https://conda.anaconda.org/conda-forge/noarch/pocean-core-3.3.0-pyhcf101f3_0.conda
   hash:
-    md5: 0663c44428c1c61e4f3883678d4295bc
-    sha256: 5849ecd0f5fd17df7533f770b3852916a6b3aa95306ae630ae6f305bd5f872f0
+    md5: 28c858a511ebb66de5e88bbbb46c3361
+    sha256: 5e439660a95ed5bd7cc9f401eb5bec20791bb2c80f532af8816d803af4885785
   category: main
   optional: false
 - name: pocean-core
-  version: 3.2.1
+  version: 3.3.0
   manager: conda
   platform: osx-64
   dependencies:
@@ -17190,19 +17190,19 @@ package:
     netcdf4: ''
     numpy: '>=1.20'
     pandas: '>=1.0.5'
-    python: '>=3.9'
+    python: ''
     python-dateutil: ''
     pytz: ''
     shapely: '>=1.8'
     simplejson: ''
-  url: https://conda.anaconda.org/conda-forge/noarch/pocean-core-3.2.1-pyhd8ed1ab_0.conda
+  url: https://conda.anaconda.org/conda-forge/noarch/pocean-core-3.3.0-pyhcf101f3_0.conda
   hash:
-    md5: 0663c44428c1c61e4f3883678d4295bc
-    sha256: 5849ecd0f5fd17df7533f770b3852916a6b3aa95306ae630ae6f305bd5f872f0
+    md5: 28c858a511ebb66de5e88bbbb46c3361
+    sha256: 5e439660a95ed5bd7cc9f401eb5bec20791bb2c80f532af8816d803af4885785
   category: main
   optional: false
 - name: pocean-core
-  version: 3.2.1
+  version: 3.3.0
   manager: conda
   platform: osx-arm64
   dependencies:
@@ -17210,19 +17210,19 @@ package:
     netcdf4: ''
     numpy: '>=1.20'
     pandas: '>=1.0.5'
-    python: '>=3.9'
+    python: ''
     python-dateutil: ''
     pytz: ''
     shapely: '>=1.8'
     simplejson: ''
-  url: https://conda.anaconda.org/conda-forge/noarch/pocean-core-3.2.1-pyhd8ed1ab_0.conda
+  url: https://conda.anaconda.org/conda-forge/noarch/pocean-core-3.3.0-pyhcf101f3_0.conda
   hash:
-    md5: 0663c44428c1c61e4f3883678d4295bc
-    sha256: 5849ecd0f5fd17df7533f770b3852916a6b3aa95306ae630ae6f305bd5f872f0
+    md5: 28c858a511ebb66de5e88bbbb46c3361
+    sha256: 5e439660a95ed5bd7cc9f401eb5bec20791bb2c80f532af8816d803af4885785
   category: main
   optional: false
 - name: pocean-core
-  version: 3.2.1
+  version: 3.3.0
   manager: conda
   platform: win-64
   dependencies:
@@ -17230,15 +17230,15 @@ package:
     netcdf4: ''
     numpy: '>=1.20'
     pandas: '>=1.0.5'
-    python: '>=3.9'
+    python: ''
     python-dateutil: ''
     pytz: ''
     shapely: '>=1.8'
     simplejson: ''
-  url: https://conda.anaconda.org/conda-forge/noarch/pocean-core-3.2.1-pyhd8ed1ab_0.conda
+  url: https://conda.anaconda.org/conda-forge/noarch/pocean-core-3.3.0-pyhcf101f3_0.conda
   hash:
-    md5: 0663c44428c1c61e4f3883678d4295bc
-    sha256: 5849ecd0f5fd17df7533f770b3852916a6b3aa95306ae630ae6f305bd5f872f0
+    md5: 28c858a511ebb66de5e88bbbb46c3361
+    sha256: 5e439660a95ed5bd7cc9f401eb5bec20791bb2c80f532af8816d803af4885785
   category: main
   optional: false
 - name: proj

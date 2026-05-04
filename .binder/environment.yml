@@ -33,7 +33,7 @@ dependencies:
   - owslib
   - palettable
   - pandas
-  - pocean-core
+  - pocean-core>=3.3.0
   - pyobis
   - pysgrid
   - pyugrid
