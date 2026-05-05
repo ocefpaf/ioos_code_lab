@@ -53,9 +53,9 @@ dependencies:
   - r-htmlwidgets
   - r-maps
   - r-readr
-  - r-robis  # hoding osx-arm64
+  # - r-robis  # Dependencies are problematic on Windows.
 platforms:
   - linux-64
   - osx-64
-  # - osx-arm64
+  - osx-arm64
   - win-64
