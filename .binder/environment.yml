@@ -14,7 +14,7 @@ dependencies:
   - folium
   - gdal
   - geopandas
-  - geoplot
+  - geoplot>=0.5.1
   - gliderpy>=0.3.1
   - gridgeo
   - humanize
@@ -33,7 +33,7 @@ dependencies:
   - owslib
   - palettable
   - pandas
-  - pocean-core
+  - pocean-core>=3.3.0
   - pyobis
   - pysgrid
   - pyugrid

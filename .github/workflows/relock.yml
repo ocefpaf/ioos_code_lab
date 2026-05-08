@@ -29,12 +29,12 @@ jobs:
         init-shell: bash
         create-args: >-
           python=3
-          conda conda-lock
+          conda-lock
 
     - name: re-lock
       run: >
         cd .binder/
-        && conda-lock --conda=micromamba -f environment-python_and_r.yml
+        && conda-lock --conda=micromamba -f environment.yml
 
     - name: Check for changes
       id: check_changes
