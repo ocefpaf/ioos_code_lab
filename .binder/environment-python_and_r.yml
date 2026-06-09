@@ -18,6 +18,7 @@ dependencies:
   - geoplot>=0.5.1
   - gliderpy>=0.3.1
   - gridgeo
+  - h3pandas
   - humanize
   - ioos-metrics
   - ioos-qc
@@ -54,7 +55,7 @@ dependencies:
   - r-htmlwidgets
   - r-maps
   - r-readr
-  # - r-robis  # Dependencies are problematic on Windows.
+  # - r-robis  # holding osx-arm64/win-64
 platforms:
   - linux-64
   - osx-64
