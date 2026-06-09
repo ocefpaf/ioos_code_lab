@@ -18,6 +18,7 @@ dependencies:
   - geoplot>=0.5.1
   - gliderpy>=0.3.1
   - gridgeo
+  - h3pandas
   - humanize
   - ioos-metrics
   - ioos-qc
