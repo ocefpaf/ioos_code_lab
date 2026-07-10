@@ -1,0 +1,54 @@
+version: 1
+project:
+  exclude:
+    - _build
+    - Thumbs.db
+    - .DS_Store
+    - '*.ipynb_checkpoints'
+    - '*.archived.ipynb'
+  github: ioos/ioos_code_lab
+  thebe:
+    binder:
+      repo: ioos/ioos_code_lab
+      provider: github
+      url: https://mybinder.org
+      ref: main
+  toc:
+    - file: content/intro.md
+    - title: Getting Started
+      children:
+        - file: content/ioos_installation_conda.md
+          title: Installing the IOOS Conda Environment
+    - title: Code Gallery
+      children:
+        - file: content/code_gallery/gallery.md
+          title: Notebooks gallery
+        - file: content/code_gallery/data_access.md
+          children:
+            - pattern: content/code_gallery/data_access_notebooks/*
+        - file: content/code_gallery/data_analysis_and_visualization.md
+          children:
+            - pattern: content/code_gallery/data_analysis_and_visualization_notebooks/*
+        - file: content/code_gallery/data_management.md
+          children:
+            - pattern: content/code_gallery/data_management_notebooks/*
+    - title: Video Tutorials
+      children:
+        - pattern: content/Video_Demo_Markdown/*
+    - title: Other Resources
+      children:
+        - url: https://help.aodn.org.au/aodn-data-tools/user-code-library/
+          title: Opening netCDF files - hints from AODN
+        - url: http://unidata.github.io/notebook-gallery/
+          title: Unidata Jupyter Notebook Gallery
+        - url: http://iobis.org/tutorial/
+          title: Extracting and Enriching OBIS data with R
+        - url: https://github.com/USGS-R
+          title: USGS-R Examples
+site:
+  options:
+    logo: images/IOOS_logo.png
+    favicon: images/IOOS_logo.png
+    analytics_google: G-546J258RCJ
+    folders: true
+  template: book-theme
